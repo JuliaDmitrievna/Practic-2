@@ -4,4 +4,4 @@
 Этот репозиторий является каркасом для продолжения работы с практической №2
 
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://juliadmitrievna.github.io/Practic-1/)
+- [Публичная страница на GitHub Pages](https://juliadmitrievna.github.io/Practic-2/)
