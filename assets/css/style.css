@@ -1,0 +1,116 @@
+:root {
+    /* Цвета из макета */
+    --color-primary: #415167;
+    --color-accent: #C7A17A;
+    --color-dark: #151D28;
+    --color-light: #EDF0F5;
+    --color-cream: #F9F5E8;
+
+    /* Шрифты */
+    --font-display: "Montserrat", sans-serif;
+    --font-main: "Nunito", sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/*HEADER */
+
+header {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 40px;
+}
+
+/*Стили для навигации (меню) */
+.header-nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header-nav a {
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+
+    transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+    color: var(--color-accent);
+}
+
+/*Стили для корзины (справа) */
+.header-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/*HERO SECTION */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 40px;
+    gap: 40px;
+}
+
+/*Стили левой иконки (текст)*/
+.hero-left h1 {
+    font-family: var(--font-display);
+    font-size: 54px;
+    line-height: 70px;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+/*Стили слова ПЕРСОНАЛИЗИРОВАННЫЙ*/
+.hero-left .highlight {
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 0 10px;
+}
+
+/*Стили правая колонка*/
+.hero-image {
+    width: 600px;
+    border-radius: 8px;
+    object-fit: cover;
+}
