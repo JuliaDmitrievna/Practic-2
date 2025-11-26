@@ -441,3 +441,13 @@ header {
     background-color: var(--color-accent);
     color: #fff;
 }
+
+/* FOOTER*/
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--color-primary);
+}
