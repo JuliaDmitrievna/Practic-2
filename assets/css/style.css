@@ -269,7 +269,7 @@ header {
 }
 /* Исправление расстояния в разделе "Подарочный набор" */
 .giftset-section .section-title {
-    margin-top: 20px; /* можно 15? */
+    margin-top: 10px; /* можно 15? */
 }
 
 /* Контейнер с картинкой и текстом */
@@ -483,7 +483,7 @@ header {
 
 .contacts-info {
     text-align: center;
-    margin-top: 20px; /* меньше расстояние от заголовка до текста */
+    margin-top: 15px; /* меньше расстояние от заголовка до текста */
 }
 
 .contacts-info p {
