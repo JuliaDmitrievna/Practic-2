@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 :root {
     /* Цвета из макета */
     --color-primary: #415167;
@@ -119,7 +122,7 @@ header {
 
 .base-section {
     padding: 80px 40px;
-    background-color: var(--color-light);
+    background-color: #fff;
 }
 
 /*Заголовок секции*/
@@ -189,7 +192,13 @@ header {
     text-align: center;
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.2s ease; /* ДОБАВИЛИ */
 }
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
 
 /* Изображения товаров */
 .product-card img {
@@ -372,7 +381,6 @@ header {
 
     transition: transform 0.2s ease;
 }
-
 .combo-card:hover {
     transform: translateY(-5px);
 }
@@ -440,6 +448,29 @@ header {
 .combo-card button:hover {
     background-color: var(--color-accent);
     color: #fff;
+}
+/*CONTACTS SECTION */
+
+.contacts-section {
+    padding: 80px 40px;
+    background-color: #fff;
+}
+
+.contacts-info {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 30px;
+    color: var(--color-dark);
+}
+
+.contacts-info a {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.contacts-info a:hover {
+    color: var(--color-accent);
 }
 
 /* FOOTER*/
