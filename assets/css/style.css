@@ -19,6 +19,9 @@ body {
     background-color: var(--color-light);
     color: var(--color-dark);
 }
+section {
+    scroll-margin-top: 100px;
+}
 
 /*HEADER */
 
@@ -264,6 +267,10 @@ header {
     padding: 80px 40px;
     background-color: #fff;
 }
+/* Исправление расстояния в разделе "Подарочный набор" */
+.giftset-section .section-title {
+    margin-top: 20px; /* можно 15? */
+}
 
 /* Контейнер с картинкой и текстом */
 .giftset-content {
@@ -451,27 +458,44 @@ header {
 }
 /*CONTACTS SECTION */
 
+/* --- Контакты --- */
+
 .contacts-section {
-    padding: 80px 40px;
     background-color: #fff;
+    padding: 60px 0; /* компактнее */
+}
+
+.contacts-section .section-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-dark);
+    text-align: center;
+}
+
+.contacts-section .section-title {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 10px; /* меньше расстояние между подзаголовком и заголовком */
 }
 
 .contacts-info {
     text-align: center;
+    margin-top: 20px; /* меньше расстояние от заголовка до текста */
+}
+
+.contacts-info p {
+    margin: 8px 0; 
     font-size: 18px;
-    line-height: 1.6;
-    margin-top: 30px;
-    color: var(--color-dark);
 }
 
 .contacts-info a {
     color: var(--color-primary);
-    font-weight: 700;
+    text-decoration: underline;
 }
 
-.contacts-info a:hover {
-    color: var(--color-accent);
-}
 
 /* FOOTER*/
 
