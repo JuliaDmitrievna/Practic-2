@@ -267,10 +267,6 @@ header {
     padding: 80px 40px;
     background-color: #fff;
 }
-/* Исправление расстояния в разделе "Подарочный набор" */
-.giftset-section .section-title {
-    margin-top: 7px; /* можно 15? */
-}
 
 /* Контейнер с картинкой и текстом */
 .giftset-content {
