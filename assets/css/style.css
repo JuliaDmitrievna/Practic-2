@@ -248,3 +248,97 @@ header {
     background-color: var(--color-accent);
     color: #fff;
 }
+
+/*GIFTSET SECTION*/
+
+.giftset-section {
+    padding: 80px 40px;
+    background-color: #fff;
+}
+
+/* Контейнер с картинкой и текстом */
+.giftset-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+/* Картинка подарочного набора */
+.giftset-image img {
+    width: 450px;
+    border-radius: 10px;
+}
+
+/* Информаця (правая часть) */
+.giftset-info {
+    max-width: 450px;
+}
+
+/* Название набора */
+.giftset-name {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+/* Цена */
+.giftset-price {
+    font-family: var(--font-main);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+/* Описание */
+.giftset-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-dark);
+    margin-bottom: 25px;
+}
+
+/* Характеристики */
+.giftset-features {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.giftset-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.giftset-features img {
+    width: 24px;
+}
+
+/* Кнопки */
+.giftset-info .buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.giftset-info button {
+    padding: 10px 20px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--color-cream);
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.giftset-info button:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
