@@ -155,6 +155,41 @@ header {
     object-fit: cover;
 }
 
+/* Адаптив */
+@media (max-width: 900px) {
+    .hero {
+        padding: 60px 30px;
+        gap: 30px;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .hero-image {
+        width: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
 
 /* =========================================================
    BASE SECTION — ОСНОВЫ КОФЕ
@@ -423,6 +458,56 @@ header {
 
 .giftset-features img {
     width: 24px;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+
+    .giftset-content {
+        gap: 40px;
+    }
+
+    .giftset-image img {
+        width: 350px;
+    }
+
+    .giftset-info {
+        max-width: 400px;
+    }
+
+    .giftset-name {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .giftset-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .giftset-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .giftset-info {
+        max-width: 100%;
+    }
+
+    .giftset-description {
+        font-size: 14px;
+    }
+
+    .giftset-features {
+        align-items: center;
+    }
+
+    .giftset-info .buttons {
+        justify-content: center;
+    }
 }
 
 
