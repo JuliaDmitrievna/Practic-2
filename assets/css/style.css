@@ -1,8 +1,13 @@
+/* =========================================================
+   ГЛОБАЛЬНЫЕ ПАРАМЕТРЫ
+========================================================= */
+
 html {
     scroll-behavior: smooth;
 }
+
 :root {
-    /* Цвета из макета */
+    /* Цвета */
     --color-primary: #415167;
     --color-accent: #C7A17A;
     --color-dark: #151D28;
@@ -12,6 +17,32 @@ html {
     /* Шрифты */
     --font-display: "Montserrat", sans-serif;
     --font-main: "Nunito", sans-serif;
+
+    /* Типографика */
+    --fs-display: 30px;   /* большие заголовки */
+    --fs-title: 24px;     /* названия товаров */
+    --fs-subtitle: 20px;  /* подзаголовки */
+    --fs-body: 16px;      /* основной текст */
+}
+
+/* Типографика на планшете */
+@media (max-width: 900px) {
+    :root {
+        --fs-display: 26px;
+        --fs-title: 22px;
+        --fs-subtitle: 18px;
+        --fs-body: 15px;
+    }
+}
+
+/* Типографика на телефоне */
+@media (max-width: 600px) {
+    :root {
+        --fs-display: 22px;
+        --fs-title: 20px;
+        --fs-subtitle: 16px;
+        --fs-body: 14px;
+    }
 }
 
 body {
@@ -19,11 +50,16 @@ body {
     background-color: var(--color-light);
     color: var(--color-dark);
 }
+
 section {
     scroll-margin-top: 100px;
 }
 
-/*HEADER */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header {
     width: 100%;
@@ -43,7 +79,7 @@ header {
     height: 40px;
 }
 
-/*Стили для навигации (меню) */
+/* Меню */
 .header-nav ul {
     display: flex;
     gap: 40px;
@@ -54,7 +90,6 @@ header {
     font-size: 16px;
     font-weight: 600;
     color: var(--color-dark);
-
     transition: color 0.2s ease;
 }
 
@@ -62,7 +97,7 @@ header {
     color: var(--color-accent);
 }
 
-/*Стили для корзины (справа) */
+/* Корзина */
 .header-cart {
     display: flex;
     align-items: center;
@@ -86,7 +121,11 @@ header {
     border-radius: 50%;
 }
 
-/*HERO SECTION */
+
+
+/* =========================================================
+   HERO (ГЛАВНЫЙ ЭКРАН)
+========================================================= */
 
 .hero {
     display: flex;
@@ -97,38 +136,38 @@ header {
     gap: 40px;
 }
 
-/*Стили левой иконки (текст)*/
 .hero-left h1 {
     font-family: var(--font-display);
     font-size: 54px;
-    line-height: 70px;
+    line-height: 1.2;
     font-weight: 900;
     color: var(--color-primary);
     text-transform: uppercase;
 }
 
-/*Стили слова ПЕРСОНАЛИЗИРОВАННЫЙ*/
 .hero-left .highlight {
     background-color: var(--color-accent);
     color: #fff;
     padding: 0 10px;
 }
 
-/*Стили правая колонка*/
 .hero-image {
     width: 600px;
     border-radius: 8px;
     object-fit: cover;
 }
 
-/* BASE SECTION */
+
+
+/* =========================================================
+   BASE SECTION — ОСНОВЫ КОФЕ
+========================================================= */
 
 .base-section {
     padding: 80px 40px;
     background-color: #fff;
 }
 
-/*Заголовок секции*/
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -136,22 +175,30 @@ header {
 
 .section-title {
     font-family: var(--font-display);
-    font-size: 30px;
+    font-size: var(--fs-display);
     font-weight: 900;
     color: var(--color-primary);
 }
 
-/*Сетка фичей*/
+.section-subtitle {
+    font-family: var(--font-main);
+    font-size: var(--fs-subtitle);
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+/* Сетка */
 .base-features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
-/*Карточки*/
+/* Карточки */
 .feature-item img {
     width: 60px;
     margin: 0 auto 20px;
@@ -159,47 +206,50 @@ header {
 
 .feature-item h3 {
     font-family: var(--font-main);
-    font-size: 20px;
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 15px;
 }
 
 .feature-item p {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--color-dark);
+    font-size: var(--fs-body);
     line-height: 1.4;
 }
 
-/* Адаптация: 2 колонки */
+
+
+/* Адаптив */
 @media (max-width: 900px) {
     .base-features {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Адаптация: 1 колонка */
 @media (max-width: 600px) {
     .base-features {
         grid-template-columns: 1fr;
     }
 }
 
-/* FAVORITE SECTION */
+
+
+/* =========================================================
+   FAVORITE SECTION — ТОЧНО ВАШ ВКУС
+========================================================= */
 
 .favorite-section {
     padding: 80px 40px;
 }
 
-/* Сетка для карточек */
+/* Сетка */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
-/* Карочка товара */
+/* Карточки */
 .product-card {
     background-color: #fff;
     padding: 20px;
@@ -210,31 +260,27 @@ header {
     align-items: center;
     text-align: center;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    
-    transition: transform 0.2s ease; /* ДОБАВИЛИ */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
 }
+
 .product-card:hover {
     transform: translateY(-5px);
 }
 
-
-/* Изображения товаров */
 .product-card img {
     width: 160px;
     margin-bottom: 20px;
 }
 
-/* Название товара */
 .product-card h3 {
     font-family: var(--font-main);
-    font-size: 20px;
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 10px;
 }
 
-/* Цена */
 .product-card .price {
     font-family: var(--font-main);
     font-size: 20px;
@@ -243,11 +289,9 @@ header {
     margin-bottom: 15px;
 }
 
-/* Описание */
 .product-card .description {
-    font-size: 16px;
+    font-size: var(--fs-body);
     line-height: 1.4;
-    color: var(--color-dark);
     margin-bottom: 20px;
 }
 
@@ -261,13 +305,9 @@ header {
     padding: 10px 16px;
     font-size: 16px;
     font-weight: 700;
-    font-family: var(--font-main);
-
     background-color: var(--color-cream);
     border: 2px solid var(--color-accent);
-    color: var(--color-primary);
     border-radius: 8px;
-
     cursor: pointer;
     transition: 0.2s ease;
 }
@@ -277,52 +317,28 @@ header {
     color: #fff;
 }
 
-/* PRODUCT GRID: 2 колонки на планшете */
+
+
+/* Адаптив */
 @media (max-width: 900px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
     }
 }
-  
-/* PRODUCT GRID: 1 колонка на телефоне */
+
 @media (max-width: 600px) {
     .product-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
-}
-
-/* Мобильная адаптация карточек */
-@media (max-width: 600px) {
-
     .product-card {
         padding: 15px;
     }
-
     .product-card img {
         width: 140px;
-        margin-bottom: 15px;
     }
-
     .product-card h3 {
         font-size: 18px;
-        margin-bottom: 8px;
-    }
-
-    .product-card .price {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .product-card .description {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .product-card button {
-        padding: 8px 14px;
-        font-size: 14px;
     }
 }
 
@@ -330,21 +346,19 @@ header {
     .product-card img {
         width: 130px;
     }
-
-    .product-card h3 {
-        font-size: 16px;
-    }
 }
 
 
-/*GIFTSET SECTION*/
+
+/* =========================================================
+   GIFTSET SECTION
+========================================================= */
 
 .giftset-section {
     padding: 80px 40px;
     background-color: #fff;
 }
 
-/* Контейнер с картинкой и текстом */
 .giftset-content {
     display: flex;
     align-items: center;
@@ -353,27 +367,23 @@ header {
     margin-top: 60px;
 }
 
-/* Картинка подарочного набора */
 .giftset-image img {
     width: 450px;
     border-radius: 10px;
 }
 
-/* Информаця (правая часть) */
 .giftset-info {
     max-width: 450px;
 }
 
-/* Название набора */
 .giftset-name {
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: var(--fs-title);
     font-weight: 900;
     color: var(--color-primary);
     margin-bottom: 10px;
 }
 
-/* Цена */
 .giftset-price {
     font-family: var(--font-main);
     font-size: 22px;
@@ -382,15 +392,12 @@ header {
     margin-bottom: 20px;
 }
 
-/* Описание */
 .giftset-description {
-    font-size: 16px;
+    font-size: var(--fs-body);
     line-height: 1.5;
-    color: var(--color-dark);
     margin-bottom: 25px;
 }
 
-/* Характеристики */
 .giftset-features {
     margin-bottom: 30px;
     display: flex;
@@ -398,54 +405,27 @@ header {
     gap: 15px;
 }
 
-.giftset-features li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .giftset-features img {
     width: 24px;
 }
 
-/* Кнопки */
-.giftset-info .buttons {
-    display: flex;
-    gap: 12px;
-}
 
-.giftset-info button {
-    padding: 10px 20px;
-    font-family: var(--font-main);
-    font-size: 16px;
-    font-weight: 700;
-    background-color: var(--color-cream);
-    border: 2px solid var(--color-accent);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
 
-.giftset-info button:hover {
-    background-color: var(--color-accent);
-    color: #fff;
-}
-
-/* COMBO SECTION */
+/* =========================================================
+   COMBO SECTION
+========================================================= */
 
 .combo-section {
     padding: 80px 40px;
     background-color: var(--color-light);
 }
 
-/* Сетка для карточек */
 .combo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
-/* Карточка Combo */
 .combo-card {
     background-color: #fff;
     padding: 25px;
@@ -456,95 +436,49 @@ header {
     align-items: center;
     text-align: center;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.2s ease;
 }
+
 .combo-card:hover {
     transform: translateY(-5px);
 }
 
-/* Картинка набора */
 .combo-card img {
     width: 220px;
     margin-bottom: 20px;
 }
 
-/* Название */
 .combo-card h3 {
     font-family: var(--font-main);
-    font-size: 20px;
+    font-size: var(--fs-title);
     font-weight: 700;
-    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
-/* Цена новая и старая */
 .combo-card .price {
-    margin-bottom: 15px;
-    font-family: var(--font-main);
     font-size: 20px;
+    margin-bottom: 15px;
 }
 
-.combo-card .new-price {
-    color: var(--color-accent);
-    font-weight: 700;
-    margin-right: 10px;
-}
-
-.combo-card .old-price {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 16px;
-}
-
-/* Описание */
 .combo-card .description {
-    font-size: 16px;
+    font-size: var(--fs-body);
     line-height: 1.4;
-    color: var(--color-dark);
-    margin-bottom: 20px;
 }
 
-/* Кнопки */
-.combo-card .buttons {
-    display: flex;
-    gap: 12px;
-}
 
-.combo-card button {
-    padding: 10px 20px;
-    font-family: var(--font-main);
-    font-size: 16px;
-    font-weight: 700;
-    background-color: var(--color-cream);
-    border: 2px solid var(--color-accent);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
 
-.combo-card button:hover {
-    background-color: var(--color-accent);
-    color: #fff;
-}
-/* COMBO GRID — 2 колонки на планшете */
+/* Адаптивность COMBO */
 @media (max-width: 900px) {
     .combo-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
     }
 }
 
-/* COMBO GRID — 1 колонка на телефоне */
 @media (max-width: 600px) {
     .combo-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
-}
-
-@media (max-width: 600px) {
 
     .combo-card {
         padding: 15px;
@@ -552,27 +486,10 @@ header {
 
     .combo-card img {
         width: 150px;
-        margin-bottom: 15px;
     }
 
     .combo-card h3 {
         font-size: 18px;
-        margin-bottom: 8px;
-    }
-
-    .combo-card .price {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .combo-card .description {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .combo-card button {
-        padding: 8px 14px;
-        font-size: 14px;
     }
 }
 
@@ -580,46 +497,27 @@ header {
     .combo-card img {
         width: 130px;
     }
-
-    .combo-card h3 {
-        font-size: 16px;
-    }
 }
 
 
-/*CONTACTS SECTION */
 
-/* --- Контакты --- */
+/* =========================================================
+   CONTACTS SECTION
+========================================================= */
 
 .contacts-section {
     background-color: #fff;
-    padding: 60px 0; /* компактнее */
-}
-
-.contacts-section .section-subtitle {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--color-dark);
-    text-align: center;
-}
-
-.contacts-section .section-title {
-    font-family: var(--font-display);
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-align: center;
-    margin-top: 10px; /* меньше расстояние между подзаголовком и заголовком */
+    padding: 60px 0;
 }
 
 .contacts-info {
     text-align: center;
-    margin-top: 15px; /* меньше расстояние от заголовка до текста */
+    margin-top: 15px;
 }
 
 .contacts-info p {
-    margin: 8px 0; 
-    font-size: 18px;
+    margin: 8px 0;
+    font-size: var(--fs-body);
 }
 
 .contacts-info a {
@@ -628,7 +526,10 @@ header {
 }
 
 
-/* FOOTER*/
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
     text-align: center;
@@ -638,52 +539,47 @@ header {
     color: var(--color-primary);
 }
 
-/*   АДАПТИВНОСТЬ HEADER */
 
-/* Адаптация на tablet (< 991px) */
+
+/* =========================================================
+   АДАПТИВНОСТЬ HEADER
+========================================================= */
+
 @media (max-width: 991px) {
     .header-nav ul {
         gap: 25px;
     }
-
     .header-nav a {
         font-size: 15px;
     }
-
     header {
         padding: 15px 25px;
     }
 }
 
-/* Адаптация мобильные устройства (< 767px) */
 @media (max-width: 767px) {
     .header-nav ul {
         gap: 18px;
     }
-
     .header-nav a {
         font-size: 14px;
     }
-
     .logo {
         height: 34px;
     }
 }
 
-/* Адаптация маленькие телефоны (< 575px) */
 @media (max-width: 575px) {
     header {
         flex-direction: column;
         gap: 12px;
         padding: 12px 15px;
     }
-
     .header-nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px 25px;
     }
-
     .header-cart {
         position: absolute;
         right: 15px;
@@ -691,17 +587,14 @@ header {
     }
 }
 
-/* Адаптация очень маленькие устройства (< 399px) */
 @media (max-width: 399px) {
     .header-nav ul {
         flex-direction: column;
         gap: 10px;
     }
-
     .header-nav a {
         font-size: 13px;
     }
-
     .logo {
         height: 32px;
     }
