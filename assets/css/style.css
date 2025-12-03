@@ -56,7 +56,6 @@ section {
 }
 
 
-
 /* =========================================================
    HEADER
 ========================================================= */
@@ -122,7 +121,6 @@ header {
 }
 
 
-
 /* =========================================================
    HERO (ГЛАВНЫЙ ЭКРАН)
 ========================================================= */
@@ -156,7 +154,6 @@ header {
     border-radius: 8px;
     object-fit: cover;
 }
-
 
 
 /* =========================================================
@@ -217,8 +214,6 @@ header {
     line-height: 1.4;
 }
 
-
-
 /* Адаптив */
 @media (max-width: 900px) {
     .base-features {
@@ -231,7 +226,6 @@ header {
         grid-template-columns: 1fr;
     }
 }
-
 
 
 /* =========================================================
@@ -317,8 +311,6 @@ header {
     color: #fff;
 }
 
-
-
 /* Адаптив */
 @media (max-width: 900px) {
     .product-grid {
@@ -349,7 +341,6 @@ header {
 }
 
 
-
 /* =========================================================
    GIFTSET SECTION
 ========================================================= */
@@ -374,6 +365,31 @@ header {
 
 .giftset-info {
     max-width: 450px;
+}
+
+.giftset-info .buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.giftset-info button {
+    padding: 10px 20px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 700;
+
+    background-color: var(--color-cream);
+    border: 2px solid var(--color-accent);
+    color: var(--color-primary);
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.giftset-info button:hover {
+    background-color: var(--color-accent);
+    color: #fff;
 }
 
 .giftset-name {
@@ -410,7 +426,6 @@ header {
 }
 
 
-
 /* =========================================================
    COMBO SECTION
 ========================================================= */
@@ -420,15 +435,17 @@ header {
     background-color: var(--color-light);
 }
 
+/* Сетка */
 .combo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
+/* Карточка Combo */
 .combo-card {
     background-color: #fff;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
 
     display: flex;
@@ -436,8 +453,8 @@ header {
     align-items: center;
     text-align: center;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
 .combo-card:hover {
@@ -445,39 +462,85 @@ header {
 }
 
 .combo-card img {
-    width: 220px;
+    width: 200px;
     margin-bottom: 20px;
 }
 
+/* Название */
 .combo-card h3 {
     font-family: var(--font-main);
-    font-size: var(--fs-title);
+    font-size: 20px;
     font-weight: 700;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
+/* Цена */
 .combo-card .price {
     font-size: 20px;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
-.combo-card .description {
-    font-size: var(--fs-body);
-    line-height: 1.4;
+.combo-card .new-price {
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-right: 10px;
 }
 
+.combo-card .old-price {
+    color: #999;
+    font-size: 16px;
+    text-decoration: line-through; 
+}
 
+/* Описание */
+.combo-card .description {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
 
-/* Адаптивность COMBO */
+/* Кнопки */
+.combo-card .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.combo-card button {
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-main);
+
+    background-color: var(--color-cream);
+    border: 2px solid var(--color-accent);
+    color: var(--color-primary);
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.combo-card button:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+/* --- Адаптивность --- */
+
 @media (max-width: 900px) {
     .combo-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 }
 
 @media (max-width: 600px) {
     .combo-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .combo-card {
@@ -491,14 +554,30 @@ header {
     .combo-card h3 {
         font-size: 18px;
     }
+
+    .combo-card .price {
+        font-size: 18px;
+    }
+
+    .combo-card .description {
+        font-size: 14px;
+    }
+
+    .combo-card button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 375px) {
     .combo-card img {
         width: 130px;
     }
-}
 
+    .combo-card h3 {
+        font-size: 16px;
+    }
+}
 
 
 /* =========================================================
@@ -526,7 +605,6 @@ header {
 }
 
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -538,7 +616,6 @@ header {
     font-size: 14px;
     color: var(--color-primary);
 }
-
 
 
 /* =========================================================
