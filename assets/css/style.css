@@ -277,6 +277,66 @@ header {
     color: #fff;
 }
 
+/* PRODUCT GRID: 2 колонки на планшете */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+  
+/* PRODUCT GRID: 1 колонка на телефоне */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* Мобильная адаптация карточек */
+@media (max-width: 600px) {
+
+    .product-card {
+        padding: 15px;
+    }
+
+    .product-card img {
+        width: 140px;
+        margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .product-card .price {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .product-card .description {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .product-card button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .product-card img {
+        width: 130px;
+    }
+
+    .product-card h3 {
+        font-size: 16px;
+    }
+}
+
+
 /*GIFTSET SECTION*/
 
 .giftset-section {
@@ -468,6 +528,65 @@ header {
     background-color: var(--color-accent);
     color: #fff;
 }
+/* COMBO GRID — 2 колонки на планшете */
+@media (max-width: 900px) {
+    .combo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* COMBO GRID — 1 колонка на телефоне */
+@media (max-width: 600px) {
+    .combo-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .combo-card {
+        padding: 15px;
+    }
+
+    .combo-card img {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .combo-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .combo-card .price {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .combo-card .description {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .combo-card button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .combo-card img {
+        width: 130px;
+    }
+
+    .combo-card h3 {
+        font-size: 16px;
+    }
+}
+
+
 /*CONTACTS SECTION */
 
 /* --- Контакты --- */
