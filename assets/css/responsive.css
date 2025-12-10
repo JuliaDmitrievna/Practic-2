@@ -1,23 +1,8 @@
-/* =====================================================================
-    ГЛОБАЛЬНЫЕ ПРАВИЛА ДЛЯ АДАПТИВА
-===================================================================== */
-html, body {
-    overflow-x: hidden;
-}
+/* =========================================================
+   ГЛОБАЛЬНАЯ ТИПОГРАФИКА
+========================================================= */
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-h1, h2, h3, p, a, button {
-    word-wrap: break-word;
-}
-
-
-/* =====================================================================
-    АДАПТИВНАЯ ТИПОГРАФИКА
-===================================================================== */
+/* Планшет */
 @media (max-width: 900px) {
     :root {
         --fs-display: 26px;
@@ -27,6 +12,7 @@ h1, h2, h3, p, a, button {
     }
 }
 
+/* Телефоны */
 @media (max-width: 600px) {
     :root {
         --fs-display: 22px;
@@ -37,12 +23,13 @@ h1, h2, h3, p, a, button {
 }
 
 
-/* =====================================================================
-   2. HEADER
-===================================================================== */
+/* =========================================================
+   HEADER
+========================================================= */
+
 @media (max-width: 991px) {
     header {
-        padding: 15px 20px;
+        padding: 15px 25px;
     }
     .header-nav ul {
         gap: 25px;
@@ -53,14 +40,14 @@ h1, h2, h3, p, a, button {
 }
 
 @media (max-width: 767px) {
-    .logo {
-        height: 36px;
-    }
     .header-nav ul {
         gap: 18px;
     }
     .header-nav a {
         font-size: 14px;
+    }
+    .logo {
+        height: 34px;
     }
 }
 
@@ -70,22 +57,19 @@ h1, h2, h3, p, a, button {
         gap: 12px;
         padding: 12px 15px;
     }
-    .header-cart {
-        position: absolute;
-        right: 15px;
-        top: 12px;
-    }
     .header-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px 20px;
+        gap: 15px 25px;
+    }
+    .header-cart {
+        position: absolute;
+        right: 15px;
+        top: 15px;
     }
 }
 
 @media (max-width: 399px) {
-    .logo {
-        height: 32px;
-    }
     .header-nav ul {
         flex-direction: column;
         gap: 10px;
@@ -93,107 +77,87 @@ h1, h2, h3, p, a, button {
     .header-nav a {
         font-size: 13px;
     }
+    .logo {
+        height: 32px;
+    }
 }
 
 
-/* =====================================================================
-   3. HERO — ГЛАВНЫЙ ЭКРАН
-===================================================================== */
-.hero {
-    max-width: 100%;
-    overflow: hidden;
-}
+/* =========================================================
+   HERO
+========================================================= */
 
-.hero-image {
-    max-width: 100%;
-}
-
+/* Планшеты */
 @media (max-width: 900px) {
     .hero {
-        padding: 50px 20px;
+        padding: 60px 30px;
         gap: 30px;
-        flex-direction: column;
-        text-align: center;
     }
 
     .hero-left h1 {
         font-size: 40px;
-        line-height: 1.2;
     }
 
     .hero-image {
-        max-width: 420px;
+        max-height: 480px;
     }
 }
 
+/* Телефоны */
 @media (max-width: 600px) {
     .hero {
-        padding: 40px 15px;
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
     }
 
     .hero-left h1 {
         font-size: 32px;
-        line-height: 1.2;
     }
 
     .hero-image {
-        max-width: 300px;
+        width: 100%;
+        height: auto;
+        max-width: 340px;
     }
 }
 
 
-/* =====================================================================
-   4. BASE SECTION — ОСНОВЫ КОФЕ
-===================================================================== */
+/* =========================================================
+   BASE SECTION
+========================================================= */
 
 @media (max-width: 900px) {
-    .base-section {
-        padding: 60px 20px;
-    }
     .base-features {
         grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
     }
 }
 
 @media (max-width: 600px) {
-    .base-section {
-        padding: 40px 15px;
-    }
     .base-features {
         grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .section-title {
-        font-size: 22px;
-    }
-}
-
-
-/* =====================================================================
-   5. FAVORITE SECTION — ТОЧНО ВАШ ВКУС
-===================================================================== */
-
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 }
 
-@media (max-width: 600px) {
-    .favorite-section {
-        padding: 50px 15px;
-    }
 
+/* =========================================================
+   FAVORITE SECTION
+========================================================= */
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
     .product-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
 
     .product-card {
-        max-width: 340px;
-        margin: 0 auto;
         padding: 15px;
     }
 
@@ -202,10 +166,6 @@ h1, h2, h3, p, a, button {
     }
 
     .product-card h3 {
-        font-size: 18px;
-    }
-
-    .product-card .price {
         font-size: 18px;
     }
 }
@@ -217,9 +177,9 @@ h1, h2, h3, p, a, button {
 }
 
 
-/* =====================================================================
-   6. GIFTSET SECTION — ПОДАРОЧНЫЙ НАБОР
-===================================================================== */
+/* =========================================================
+   GIFTSET SECTION
+========================================================= */
 
 @media (max-width: 900px) {
     .giftset-content {
@@ -228,22 +188,21 @@ h1, h2, h3, p, a, button {
     .giftset-image img {
         width: 350px;
     }
+    .giftset-info {
+        max-width: 400px;
+    }
 }
 
 @media (max-width: 600px) {
-
-    .giftset-section {
-        padding: 60px 20px;
-    }
-
     .giftset-content {
         flex-direction: column;
         text-align: center;
-        gap: 25px;
+        gap: 30px;
     }
 
     .giftset-image img {
-        max-width: 280px;
+        width: 100%;
+        max-width: 300px;
     }
 
     .giftset-info {
@@ -257,18 +216,16 @@ h1, h2, h3, p, a, button {
     .giftset-features {
         align-items: center;
     }
-}
 
-@media (max-width: 375px) {
-    .giftset-image img {
-        max-width: 240px;
+    .giftset-info .buttons {
+        justify-content: center;
     }
 }
 
 
-/* =====================================================================
-   7. COMBO SECTION — КОМБО НАБОРЫ
-===================================================================== */
+/* =========================================================
+   COMBO SECTION
+========================================================= */
 
 @media (max-width: 900px) {
     .combo-grid {
@@ -278,19 +235,12 @@ h1, h2, h3, p, a, button {
 }
 
 @media (max-width: 600px) {
-
-    .combo-section {
-        padding: 60px 15px;
-    }
-
     .combo-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
 
     .combo-card {
-        max-width: 340px;
-        margin: 0 auto;
         padding: 15px;
     }
 
@@ -305,29 +255,19 @@ h1, h2, h3, p, a, button {
     .combo-card .price {
         font-size: 18px;
     }
+
+    .combo-card .description {
+        font-size: 14px;
+    }
+
+    .combo-card button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 375px) {
     .combo-card img {
         width: 130px;
-    }
-}
-
-
-/* =====================================================================
-   8. CONTACTS & FOOTER
-===================================================================== */
-
-@media (max-width: 600px) {
-    .contacts-section {
-        padding: 40px 15px;
-    }
-
-    .contacts-info p {
-        font-size: 14px;
-    }
-
-    .footer {
-        font-size: 12px;
     }
 }
