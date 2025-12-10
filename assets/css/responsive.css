@@ -1,63 +1,48 @@
-/* =========================================================
-   GLOBAL TYPOGRAPHY SCALE
-========================================================= */
-/* ≤ 1200px — Desktop S */
-@media (max-width: 1200px) {
+/* =====================================================================
+    ГЛОБАЛЬНЫЕ ПРАВИЛА ДЛЯ АДАПТИВА
+===================================================================== */
+html, body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p, a, button {
+    word-wrap: break-word;
+}
+
+
+/* =====================================================================
+    АДАПТИВНАЯ ТИПОГРАФИКА
+===================================================================== */
+@media (max-width: 900px) {
     :root {
-        --fs-display: 28px;
+        --fs-display: 26px;
         --fs-title: 22px;
         --fs-subtitle: 18px;
         --fs-body: 15px;
     }
 }
 
-/* ≤ 992px — Tablet */
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     :root {
-        --fs-display: 26px;
-        --fs-title: 21px;
-        --fs-subtitle: 17px;
-        --fs-body: 15px;
-    }
-}
-
-/* ≤ 768px — Small Tablet */
-@media (max-width: 768px) {
-    :root {
-        --fs-display: 24px;
+        --fs-display: 22px;
         --fs-title: 20px;
         --fs-subtitle: 16px;
         --fs-body: 14px;
     }
 }
 
-/* ≤ 576px — Phone */
-@media (max-width: 576px) {
-    :root {
-        --fs-display: 22px;
-        --fs-title: 18px;
-        --fs-subtitle: 15px;
-        --fs-body: 14px;
-    }
-}
 
-/* ≤ 400px — Small Phones */
-@media (max-width: 400px) {
-    :root {
-        --fs-display: 20px;
-        --fs-title: 17px;
-        --fs-subtitle: 15px;
-        --fs-body: 13px;
-    }
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-@media (max-width: 992px) {
+/* =====================================================================
+   2. HEADER
+===================================================================== */
+@media (max-width: 991px) {
     header {
-        padding: 15px 25px;
+        padding: 15px 20px;
     }
     .header-nav ul {
         gap: 25px;
@@ -67,37 +52,40 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    .logo {
+        height: 36px;
+    }
     .header-nav ul {
         gap: 18px;
     }
     .header-nav a {
         font-size: 14px;
     }
-    .logo {
-        height: 34px;
-    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     header {
         flex-direction: column;
         gap: 12px;
         padding: 12px 15px;
     }
-    .header-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 25px;
-    }
     .header-cart {
         position: absolute;
         right: 15px;
-        top: 15px;
+        top: 12px;
+    }
+    .header-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 399px) {
+    .logo {
+        height: 32px;
+    }
     .header-nav ul {
         flex-direction: column;
         gap: 10px;
@@ -105,160 +93,241 @@
     .header-nav a {
         font-size: 13px;
     }
-    .logo {
-        height: 32px;
-    }
 }
 
 
-/* =========================================================
-   HERO SECTION
-========================================================= */
-@media (max-width: 992px) {
+/* =====================================================================
+   3. HERO — ГЛАВНЫЙ ЭКРАН
+===================================================================== */
+.hero {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
     .hero {
-        padding: 60px 30px;
+        padding: 50px 20px;
         gap: 30px;
-    }
-    .hero-image {
-        width: 420px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
         flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
     }
+
+    .hero-left h1 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
     .hero-image {
-        width: 100%;
-        max-width: 360px;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .hero-image {
+        max-width: 300px;
     }
 }
 
 
-/* =========================================================
-   BASE SECTION 
-========================================================= */
-@media (max-width: 992px) {
+/* =====================================================================
+   4. BASE SECTION — ОСНОВЫ КОФЕ
+===================================================================== */
+
+@media (max-width: 900px) {
+    .base-section {
+        padding: 60px 20px;
+    }
     .base-features {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 25px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
+    .base-section {
+        padding: 40px 15px;
+    }
     .base-features {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    .section-title {
+        font-size: 22px;
+    }
 }
 
 
-/* =========================================================
-   FAVORITE SECTION (Products)
-========================================================= */
-@media (max-width: 992px) {
+/* =====================================================================
+   5. FAVORITE SECTION — ТОЧНО ВАШ ВКУС
+===================================================================== */
+
+@media (max-width: 900px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 }
 
-@media (max-width: 768px) {
-    .product-card {
-        padding: 18px;
+@media (max-width: 600px) {
+    .favorite-section {
+        padding: 50px 15px;
     }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-card {
+        max-width: 340px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
     .product-card img {
         width: 140px;
     }
-}
 
-@media (max-width: 576px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-    .product-card {
-        padding: 15px;
-    }
     .product-card h3 {
+        font-size: 18px;
+    }
+
+    .product-card .price {
         font-size: 18px;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
     .product-card img {
         width: 130px;
     }
 }
 
 
-/* =========================================================
-   GIFTSET SECTION
-========================================================= */
-@media (max-width: 992px) {
+/* =====================================================================
+   6. GIFTSET SECTION — ПОДАРОЧНЫЙ НАБОР
+===================================================================== */
+
+@media (max-width: 900px) {
     .giftset-content {
         gap: 40px;
     }
     .giftset-image img {
-        width: 380px;
+        width: 350px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+
+    .giftset-section {
+        padding: 60px 20px;
+    }
+
     .giftset-content {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
+        gap: 25px;
     }
+
     .giftset-image img {
-        width: 100%;
-        max-width: 320px;
+        max-width: 280px;
     }
+
+    .giftset-info {
+        max-width: 100%;
+    }
+
+    .giftset-description {
+        font-size: 14px;
+    }
+
     .giftset-features {
         align-items: center;
     }
-    .giftset-info .buttons {
-        justify-content: center;
+}
+
+@media (max-width: 375px) {
+    .giftset-image img {
+        max-width: 240px;
     }
 }
 
 
-/* =========================================================
-   COMBO SECTION
-========================================================= */
-@media (max-width: 992px) {
+/* =====================================================================
+   7. COMBO SECTION — КОМБО НАБОРЫ
+===================================================================== */
+
+@media (max-width: 900px) {
     .combo-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
+
+    .combo-section {
+        padding: 60px 15px;
+    }
+
     .combo-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
+
     .combo-card {
+        max-width: 340px;
+        margin: 0 auto;
         padding: 15px;
     }
+
     .combo-card img {
         width: 150px;
     }
+
+    .combo-card h3 {
+        font-size: 18px;
+    }
+
+    .combo-card .price {
+        font-size: 18px;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
     .combo-card img {
         width: 130px;
     }
 }
 
 
-/* =========================================================
-   CONTACTS
-========================================================= */
-@media (max-width: 576px) {
+/* =====================================================================
+   8. CONTACTS & FOOTER
+===================================================================== */
+
+@media (max-width: 600px) {
+    .contacts-section {
+        padding: 40px 15px;
+    }
+
     .contacts-info p {
         font-size: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
     }
 }
