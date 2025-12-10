@@ -1,7 +1,6 @@
 /* =========================================================
    ГЛОБАЛЬНЫЕ ПАРАМЕТРЫ
 ========================================================= */
-
 html {
     scroll-behavior: smooth;
 }
@@ -25,26 +24,6 @@ html {
     --fs-body: 16px;      /* основной текст */
 }
 
-/* Типографика на планшете */
-@media (max-width: 900px) {
-    :root {
-        --fs-display: 26px;
-        --fs-title: 22px;
-        --fs-subtitle: 18px;
-        --fs-body: 15px;
-    }
-}
-
-/* Типографика на телефоне */
-@media (max-width: 600px) {
-    :root {
-        --fs-display: 22px;
-        --fs-title: 20px;
-        --fs-subtitle: 16px;
-        --fs-body: 14px;
-    }
-}
-
 body {
     font-family: var(--font-main);
     background-color: var(--color-light);
@@ -59,7 +38,6 @@ section {
 /* =========================================================
    HEADER
 ========================================================= */
-
 header {
     width: 100%;
     background-color: #fff;
@@ -124,7 +102,6 @@ header {
 /* =========================================================
    HERO (ГЛАВНЫЙ ЭКРАН)
 ========================================================= */
-
 .hero {
     display: flex;
     align-items: center;
@@ -155,46 +132,10 @@ header {
     object-fit: cover;
 }
 
-/* Адаптив */
-@media (max-width: 900px) {
-    .hero {
-        padding: 60px 30px;
-        gap: 30px;
-    }
-
-    .hero-left h1 {
-        font-size: 40px;
-        line-height: 52px;
-    }
-
-    .hero-image {
-        width: 420px;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .hero-left h1 {
-        font-size: 32px;
-        line-height: 44px;
-    }
-
-    .hero-image {
-        width: 100%;
-        max-width: 340px;
-    }
-}
-
 
 /* =========================================================
    BASE SECTION — ОСНОВЫ КОФЕ
 ========================================================= */
-
 .base-section {
     padding: 80px 40px;
     background-color: #fff;
@@ -249,24 +190,10 @@ header {
     line-height: 1.4;
 }
 
-/* Адаптив */
-@media (max-width: 900px) {
-    .base-features {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .base-features {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* =========================================================
    FAVORITE SECTION — ТОЧНО ВАШ ВКУС
 ========================================================= */
-
 .favorite-section {
     padding: 80px 40px;
 }
@@ -352,40 +279,9 @@ header {
 }
 
 
-/* Адаптив */
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    .product-card {
-        padding: 15px;
-    }
-    .product-card img {
-        width: 140px;
-    }
-    .product-card h3 {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 375px) {
-    .product-card img {
-        width: 130px;
-    }
-}
-
-
 /* =========================================================
    GIFTSET SECTION
 ========================================================= */
-
 .giftset-section {
     padding: 80px 40px;
     background-color: #fff;
@@ -466,61 +362,10 @@ header {
     width: 24px;
 }
 
-/* Адаптив */
-@media (max-width: 900px) {
-
-    .giftset-content {
-        gap: 40px;
-    }
-
-    .giftset-image img {
-        width: 350px;
-    }
-
-    .giftset-info {
-        max-width: 400px;
-    }
-
-    .giftset-name {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .giftset-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .giftset-image img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .giftset-info {
-        max-width: 100%;
-    }
-
-    .giftset-description {
-        font-size: 14px;
-    }
-
-    .giftset-features {
-        align-items: center;
-    }
-
-    .giftset-info .buttons {
-        justify-content: center;
-    }
-}
-
 
 /* =========================================================
    COMBO SECTION
 ========================================================= */
-
 .combo-section {
     padding: 80px 40px;
     background-color: var(--color-light);
@@ -619,62 +464,10 @@ header {
     color: #fff;
 }
 
-/* --- Адаптивность --- */
-
-@media (max-width: 900px) {
-    .combo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-@media (max-width: 600px) {
-    .combo-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .combo-card {
-        padding: 15px;
-    }
-
-    .combo-card img {
-        width: 150px;
-    }
-
-    .combo-card h3 {
-        font-size: 18px;
-    }
-
-    .combo-card .price {
-        font-size: 18px;
-    }
-
-    .combo-card .description {
-        font-size: 14px;
-    }
-
-    .combo-card button {
-        padding: 8px 14px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 375px) {
-    .combo-card img {
-        width: 130px;
-    }
-
-    .combo-card h3 {
-        font-size: 16px;
-    }
-}
-
 
 /* =========================================================
    CONTACTS SECTION
 ========================================================= */
-
 .contacts-section {
     background-color: #fff;
     padding: 60px 0;
@@ -706,64 +499,4 @@ header {
     font-family: var(--font-main);
     font-size: 14px;
     color: var(--color-primary);
-}
-
-
-/* =========================================================
-   АДАПТИВНОСТЬ HEADER
-========================================================= */
-
-@media (max-width: 991px) {
-    .header-nav ul {
-        gap: 25px;
-    }
-    .header-nav a {
-        font-size: 15px;
-    }
-    header {
-        padding: 15px 25px;
-    }
-}
-
-@media (max-width: 767px) {
-    .header-nav ul {
-        gap: 18px;
-    }
-    .header-nav a {
-        font-size: 14px;
-    }
-    .logo {
-        height: 34px;
-    }
-}
-
-@media (max-width: 575px) {
-    header {
-        flex-direction: column;
-        gap: 12px;
-        padding: 12px 15px;
-    }
-    .header-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 25px;
-    }
-    .header-cart {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-    }
-}
-
-@media (max-width: 399px) {
-    .header-nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .header-nav a {
-        font-size: 13px;
-    }
-    .logo {
-        height: 32px;
-    }
 }
