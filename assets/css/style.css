@@ -118,15 +118,16 @@ header {
 ========================================================= */
 .hero {
     display: flex;
-    align-items: center;          
+    align-items: center;
     justify-content: space-between;
 
-    padding: 0 40px;              
+    padding-left: 40px;   
+    padding-right: 0;     
     gap: 40px;
 
-    height: auto;                 
+    height: auto;
     max-width: 1440px;
-    margin: 0 auto;               
+    margin: 0 auto;
 }
 
 .hero-left h1 {
