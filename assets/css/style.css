@@ -18,16 +18,23 @@ html {
     --font-main: "Nunito", sans-serif;
 
     /* Типографика */
-    --fs-display: 30px;   /* большие заголовки */
-    --fs-title: 24px;     /* названия товаров */
-    --fs-subtitle: 20px;  /* подзаголовки */
-    --fs-body: 16px;      /* основной текст */
+    --fs-display: 30px;
+    --fs-title: 24px;
+    --fs-subtitle: 20px;
+    --fs-body: 16px;
 }
 
 body {
     font-family: var(--font-main);
     background-color: var(--color-light);
     color: var(--color-dark);
+
+    max-width: 1440px;   /* FIX: ограничиваем ширину сайта */
+    margin: 0 auto;      /* FIX: центрируем сайт */
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 section {
@@ -41,6 +48,11 @@ section {
 header {
     width: 100%;
     background-color: #fff;
+
+    /* FIX: Привязываем header к ширине макета */
+    max-width: 1440px;
+    margin: 0 auto;
+
     padding: 20px 40px;
 
     display: flex;
@@ -100,7 +112,7 @@ header {
 
 
 /* =========================================================
-   HERO (ГЛАВНЫЙ ЭКРАН)
+   HERO
 ========================================================= */
 .hero {
     display: flex;
@@ -110,7 +122,11 @@ header {
     padding: 80px 40px;
     gap: 40px;
 
-    min-height: 600px; /* чтобы секция имела стабильную высоту */
+    min-height: 600px;
+
+    /* FIX: Привязываем Hero к ширине сайта */
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .hero-left h1 {
@@ -129,16 +145,16 @@ header {
 }
 
 .hero-image {
-    height: 100%;         
-    max-height: 600px;     
-    width: auto;           
-    object-fit: cover;     
+    height: 100%;
+    max-height: 600px;
+    width: auto;
+    object-fit: cover;
     border-radius: 8px;
 }
 
 
 /* =========================================================
-   BASE SECTION — ОСНОВЫ КОФЕ
+   BASE SECTION
 ========================================================= */
 .base-section {
     padding: 80px 40px;
@@ -196,7 +212,7 @@ header {
 
 
 /* =========================================================
-   FAVORITE SECTION — ТОЧНО ВАШ ВКУС
+   FAVORITE SECTION
 ========================================================= */
 .favorite-section {
     padding: 80px 40px;
@@ -382,7 +398,7 @@ header {
     gap: 40px;
 }
 
-/* Карточка Combo */
+/* Карточки */
 .combo-card {
     background-color: #fff;
     padding: 20px;
@@ -406,7 +422,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* Название */
 .combo-card h3 {
     font-family: var(--font-main);
     font-size: 20px;
@@ -415,7 +430,6 @@ header {
     margin-bottom: 10px;
 }
 
-/* Цена */
 .combo-card .price {
     font-size: 20px;
     font-weight: 700;
@@ -431,10 +445,9 @@ header {
 .combo-card .old-price {
     color: #999;
     font-size: 16px;
-    text-decoration: line-through; 
+    text-decoration: line-through;
 }
 
-/* Описание */
 .combo-card .description {
     font-size: 16px;
     line-height: 1.4;
@@ -442,7 +455,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* Кнопки */
 .combo-card .buttons {
     display: flex;
     gap: 10px;
@@ -470,7 +482,7 @@ header {
 
 
 /* =========================================================
-   CONTACTS SECTION
+   CONTACTS
 ========================================================= */
 .contacts-section {
     background-color: #fff;
@@ -496,7 +508,6 @@ header {
 /* =========================================================
    FOOTER
 ========================================================= */
-
 .footer {
     text-align: center;
     padding: 20px 0;
