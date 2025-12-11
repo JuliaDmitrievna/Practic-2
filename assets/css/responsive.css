@@ -1,14 +1,7 @@
-/* =========================================
-   ГЛОБАЛЬНАЯ ЗАЩИТА ОТ ПЕРЕПОЛНЕНИЯ
-========================================= */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* =========================================
-   ТИПОГРАФИКА
-========================================= */
+/* =========================================================
+   ГЛОБАЛЬНАЯ ТИПОГРАФИКА
+========================================================= */
+/* Планшеты */
 @media (max-width: 900px) {
     :root {
         --fs-display: 26px;
@@ -18,6 +11,7 @@ html, body {
     }
 }
 
+/* Телефоны */
 @media (max-width: 600px) {
     :root {
         --fs-display: 22px;
@@ -27,170 +21,208 @@ html, body {
     }
 }
 
-/* =========================================
+
+/* =========================================================
    HEADER
-========================================= */
-@media (max-width: 991px) {
-    header { padding: 15px 25px; }
-    .header-nav ul { gap: 25px; }
-}
-
-@media (max-width: 767px) {
-    .header-nav ul { gap: 18px; flex-wrap: wrap; justify-content: center; }
-    .logo { height: 34px; }
-}
-
-@media (max-width: 575px) {
+========================================================= */
+@media (max-width: 1024px) {
     header {
+        padding: 20px 20px;
+        gap: 20px;
+    }
+
+    .header-nav ul {
+        gap: 25px;
+    }
+
+    .header-cart {
+        transform: translateX(0);
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-nav ul {
         flex-direction: column;
         gap: 12px;
-        padding: 12px 15px;
-    }
-    .header-cart {
-        position: absolute;
-        right: 15px;
-        top: 15px;
+        text-align: center;
     }
 }
 
-@media (max-width: 399px) {
-    .header-nav ul { flex-direction: column; gap: 10px; }
-    .logo { height: 32px; }
-}
 
-/* =========================================
-   HERO
-========================================= */
-@media (max-width: 1024px) {
-    .hero {
-        gap: 20px;
-        padding: 50px 20px;
-    }
-
-    .hero-image {
-        width: 45vw;
-        max-width: 450px;
-        height: auto;
-    }
-}
-
+/* =========================================================
+   HERO — текст сверху, картинка снизу
+========================================================= */
 @media (max-width: 900px) {
     .hero {
-        padding: 40px 25px;
-        gap: 20px;
+        padding: 40px 20px;
     }
 
     .hero-left h1 {
-        font-size: 40px;
-        line-height: 1.2;
+        font-size: 42px;
     }
 
     .hero-image {
-        width: 50vw;
-        max-width: 400px;
+        max-width: 420px;
     }
 }
 
-/* ---- МОЩНОЕ ИСПРАВЛЕНИЕ ДЛЯ ТЕЛЕФОНОВ ---- */
 @media (max-width: 600px) {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 30px 15px;
+        gap: 30px;
+
+        padding: 40px 20px;
     }
 
     .hero-left h1 {
-        font-size: 30px;
-        word-break: break-word;
-    }
-
-    .hero-left .highlight {
-        padding: 0 6px;
+        font-size: 32px;
+        line-height: 1.3;
     }
 
     .hero-image {
         width: 100%;
-        max-width: 320px;
         height: auto;
+        max-width: 360px;
+        margin: 0 auto;
     }
 }
 
-/* =========================================
+
+/* =========================================================
    BASE SECTION
-========================================= */
+========================================================= */
 @media (max-width: 900px) {
     .base-features {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
 }
 
 @media (max-width: 600px) {
     .base-features {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 10px;
+        gap: 25px;
     }
 }
 
-/* =========================================
-   FAVORITE — карточки
-========================================= */
+
+/* =========================================================
+   FAVORITE SECTION 
+========================================================= */
 @media (max-width: 900px) {
-    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
 }
 
 @media (max-width: 600px) {
     .product-grid {
         grid-template-columns: 1fr;
         gap: 25px;
-        padding: 0 15px;
     }
-    .product-card img { width: 140px; }
-    .product-card { padding: 15px; }
+
+    .product-card {
+        padding: 15px;
+    }
+
+    .product-card img {
+        width: 130px;
+    }
 }
 
-@media (max-width: 375px) {
-    .product-card img { width: 120px; }
+@media (max-width: 380px) {
+    .product-card img {
+        width: 115px;
+    }
 }
 
-/* =========================================
-   GIFTSET
-========================================= */
+
+/* =========================================================
+   GIFTSET 
+========================================================= */
 @media (max-width: 900px) {
-    .giftset-content { gap: 40px; }
-    .giftset-image img { width: 300px; }
+    .giftset-content {
+        gap: 40px;
+    }
+
+    .giftset-image img {
+        width: 360px;
+    }
 }
 
 @media (max-width: 600px) {
     .giftset-content {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 30px;
     }
-    .giftset-image img { max-width: 280px; }
+
+    .giftset-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .giftset-info {
+        max-width: 100%;
+    }
 }
 
-/* =========================================
-   COMBO SECTION
-========================================= */
+
+/* =========================================================
+   COMBO SECTION 
+========================================================= */
 @media (max-width: 900px) {
     .combo-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 30px;
     }
 }
 
 @media (max-width: 600px) {
     .combo-grid {
         grid-template-columns: 1fr;
-        padding: 0 15px;
         gap: 25px;
     }
 
-    .combo-card img { width: 150px; }
-    .combo-card { padding: 15px; }
+    .combo-card {
+        padding: 15px;
+    }
+
+    .combo-card img {
+        width: 150px;
+    }
+
+    .combo-card h3 {
+        font-size: 18px;
+    }
 }
 
-@media (max-width: 375px) {
-    .combo-card img { width: 130px; }
+
+/* =========================================================
+   CONTACTS
+========================================================= */
+@media (max-width: 600px) {
+    .contacts-section {
+        padding: 40px 0;
+    }
+
+    .contacts-info p {
+        font-size: 14px;
+    }
 }
