@@ -43,29 +43,29 @@ section {
 
 
 /* =========================================================
-   HEADER
+   HEADER — фиксированная ширина + правильное выравнивание
 ========================================================= */
+
 header {
     width: 100%;
-    background-color: #fff;
-
-    /* FIX: Привязываем header к ширине макета */
-    max-width: 1440px;
+    max-width: 1440px;      
     margin: 0 auto;
 
+    background-color: #fff;
     padding: 20px 40px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
 
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    gap: 40px;              
 }
 
-.logo {
-    height: 40px;
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;                 
 }
 
 /* Меню */
@@ -90,7 +90,9 @@ header {
 .header-cart {
     display: flex;
     align-items: center;
-    position: relative;
+
+    margin-left: 20px;      
+    transform: translateX(-20px); 
 }
 
 .cart-icon {
@@ -110,7 +112,6 @@ header {
     border-radius: 50%;
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -124,7 +125,6 @@ header {
 
     min-height: 600px;
 
-    /* FIX: Привязываем Hero к ширине сайта */
     max-width: 1440px;
     margin: 0 auto;
 }
