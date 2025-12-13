@@ -73,6 +73,13 @@ section {
    HEADER — фиксированная ширина + правильное выравнивание
 ========================================================= */
 header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+
+    width: 100%;
+    background-color: #fff; /* обязательно */
     width: 100%;     
     background-color: #fff;
     padding: 20px 40px;
