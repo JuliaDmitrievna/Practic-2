@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
 
 </head>
 <body>
@@ -19,8 +20,15 @@
 <header>
     <img src="assets/img/LOGO.png" class="logo" alt="Revo Coffee">
 
+    <!-- Кнопка бургер-меню -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <div class="header-center">
-        <nav class="header-nav">
+        <nav class="header-nav" id="mainNav">
             <ul>
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#coffee">Кофе</a></li>
@@ -292,7 +300,6 @@
     © Revo Coffee Vietnam — 2018
 </footer>
 
-
-
+<script src="assets/js/menu.js"></script>
 </body>
 </html>
