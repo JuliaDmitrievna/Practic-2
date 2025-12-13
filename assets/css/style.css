@@ -1,44 +1,52 @@
 /* =========================================================
    ГЛОБАЛЬНЫЕ ПАРАМЕТРЫ
 ========================================================= */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
+    /* Цвета */
     --color-primary: #415167;
     --color-accent: #C7A17A;
     --color-dark: #151D28;
     --color-light: #EDF0F5;
     --color-cream: #F9F5E8;
 
+    /* Шрифты */
     --font-display: "Montserrat", sans-serif;
     --font-main: "Nunito", sans-serif;
 
+    /* Типографика */
     --fs-display: 30px;
     --fs-title: 24px;
     --fs-subtitle: 20px;
     --fs-body: 16px;
-    --desc-height: 48px;
 }
 
 body {
     font-family: var(--font-main);
     background-color: var(--color-light);
     color: var(--color-dark);
-    max-width: 1440px;
-    margin: 0 auto;
+
+    max-width: 1440px;  
+    margin: 0 auto;      
 }
 
-html, body { overflow-x: hidden; }
+html, body {
+    overflow-x: hidden;
+}
 
-section { scroll-margin-top: 100px; }
+section {
+    scroll-margin-top: 100px;
+}
+
 
 /* =========================================================
    UNIVERSAL BUTTON STYLE
 ========================================================= */
 .btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
 
     padding: 12px 26px;
     font-family: var(--font-main);
@@ -53,7 +61,6 @@ section { scroll-margin-top: 100px; }
 
     cursor: pointer;
     transition: 0.25s ease;
-    min-height: 52px; /* ЕДИНАЯ ВЫСОТА КНОПКИ */
 }
 
 .btn:hover {
@@ -61,12 +68,13 @@ section { scroll-margin-top: 100px; }
     color: #fff;
 }
 
+
 /* =========================================================
-   HEADER
+   HEADER — фиксированная ширина + правильное выравнивание
 ========================================================= */
 header {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1440px;      
     margin: 0 auto;
 
     background-color: #fff;
@@ -74,16 +82,19 @@ header {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: space-between; 
+
+    gap: 40px;              
 }
 
 .header-center {
     display: flex;
-    flex: 1;
+    align-items: center;
     justify-content: center;
+    flex: 1;                 
 }
 
+/* Меню */
 .header-nav ul {
     display: flex;
     gap: 40px;
@@ -97,13 +108,17 @@ header {
     transition: color 0.2s ease;
 }
 
-.header-nav a:hover { color: var(--color-accent); }
+.header-nav a:hover {
+    color: var(--color-accent);
+}
 
+/* Корзина */
 .header-cart {
     display: flex;
     align-items: center;
-    margin-left: 20px;
-    transform: translateX(-60px);
+
+    margin-left: 20px;      
+    transform: translateX(-60px); 
 }
 
 .cart-icon {
@@ -123,6 +138,7 @@ header {
     border-radius: 50%;
 }
 
+
 /* =========================================================
    HERO
 ========================================================= */
@@ -130,10 +146,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 0;
+
+    padding-left: 40px;   
+    padding-right: 0;     
     gap: 40px;
 
+    height: auto;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -141,23 +159,26 @@ header {
 .hero-left h1 {
     font-family: var(--font-display);
     font-size: 54px;
-    font-weight: 900;
-    text-transform: uppercase;
     line-height: 1.2;
+    font-weight: 900;
     color: var(--color-primary);
+    text-transform: uppercase;
 }
 
 .hero-left .highlight {
     background-color: var(--color-accent);
-    color: white;
+    color: #fff;
     padding: 0 10px;
 }
 
 .hero-image {
+    height: 100%;                 
+    max-height: none;             
     width: auto;
-    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
 }
+
 
 /* =========================================================
    BASE SECTION
@@ -179,7 +200,15 @@ header {
     color: var(--color-primary);
 }
 
-/* сетка */
+.section-subtitle {
+    font-family: var(--font-main);
+    font-size: var(--fs-subtitle);
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+/* Сетка */
 .base-features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -189,18 +218,41 @@ header {
     text-align: center;
 }
 
-/* =========================================================
-   FAVORITE SECTION — КАРТОЧКИ 100% РОВНЫЕ
-========================================================= */
-.favorite-section { padding: 80px 40px; }
+/* Карточки */
+.feature-item img {
+    width: 60px;
+    margin: 0 auto 20px;
+}
 
+.feature-item h3 {
+    font-family: var(--font-main);
+    font-size: var(--fs-title);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: var(--fs-body);
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   FAVORITE SECTION
+========================================================= */
+.favorite-section {
+    padding: 80px 40px;
+}
+
+/* Сетка */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
-/* ровная карточка */
+/* Карточки */
 .product-card {
     background-color: #fff;
     padding: 20px;
@@ -209,37 +261,52 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* кнопки строго внизу */
-
-    min-height: 520px;
-
     text-align: center;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
-.product-card img { width: 160px; }
+.product-card:hover {
+    transform: translateY(-5px);
+}
 
-.product-card .price {
+.product-card img {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-family: var(--font-main);
+    font-size: var(--fs-title);
+    font-weight: 700;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
-/* — фикс высота для описания (максимум 2 строки) */
-.product-card .description {
-    min-height: var(--desc-height);
-    max-height: var(--desc-height);
-    margin-bottom: 20px;
-    line-height: 1.4;
-    overflow: hidden;
+.product-card .price {
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 15px;
 }
 
+.product-card .description {
+    font-size: var(--fs-body);
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Кнопки */
 .product-card .buttons {
     display: flex;
     gap: 12px;
 }
 
+
 /* =========================================================
-   GIFTSET — тоже ровный
+   GIFTSET SECTION
 ========================================================= */
 .giftset-section {
     padding: 80px 40px;
@@ -248,30 +315,76 @@ header {
 
 .giftset-content {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 60px;
     margin-top: 60px;
-    justify-content: center;
 }
 
-.giftset-info .description {
-    min-height: var(--desc-height);
-    max-height: var(--desc-height);
+.giftset-image img {
+    width: 450px;
+    border-radius: 10px;
 }
+
+.giftset-info {
+    max-width: 450px;
+}
+
+.giftset-info .buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.giftset-name {
+    font-family: var(--font-display);
+    font-size: var(--fs-title);
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.giftset-price {
+    font-family: var(--font-main);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.giftset-description {
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.giftset-features {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.giftset-features img {
+    width: 24px;
+}
+
 
 /* =========================================================
-   COMBO SECTION — ИДЕАЛЬНЫЕ КАРТОЧКИ
+   COMBO SECTION
 ========================================================= */
 .combo-section {
     padding: 80px 40px;
     background-color: var(--color-light);
 }
 
+/* Сетка */
 .combo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
+/* Карточки */
 .combo-card {
     background-color: #fff;
     padding: 20px;
@@ -279,40 +392,120 @@ header {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* кнопки всегда внизу */
     align-items: center;
-
     text-align: center;
-    min-height: 560px;
 
-    transition: 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.combo-card:hover {
+    transform: translateY(-5px);
+}
+
+.combo-card img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.combo-card h3 {
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.combo-card .price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.combo-card .new-price {
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.combo-card .old-price {
+    color: #999;
+    font-size: 16px;
+    text-decoration: line-through;
 }
 
 .combo-card .description {
-    min-height: var(--desc-height);
-    max-height: var(--desc-height);
-    overflow: hidden;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-dark);
+    margin-bottom: 20px;
 }
 
 .combo-card .buttons {
     display: flex;
-    gap: 14px;
+    flex-direction: row;
     justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.combo-card button {
+    padding: 12px 26px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-main);
+
+    background-color: #fff;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.combo-card button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+.combo-card .description {
+    min-height: 60px; /* фиксируем одинаковую высоту текстового блока */
 }
 
 /* =========================================================
-   CONTACTS + FOOTER
+   CONTACTS
 ========================================================= */
 .contacts-section {
-    background: #fff;
+    background-color: #fff;
     padding: 60px 0;
-    text-align: center;
 }
 
-.footer {
-    padding: 20px 0;
+.contacts-info {
     text-align: center;
+    margin-top: 15px;
+}
+
+.contacts-info p {
+    margin: 8px 0;
+    font-size: var(--fs-body);
+}
+
+.contacts-info a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-family: var(--font-main);
+    font-size: 14px;
     color: var(--color-primary);
 }
 
