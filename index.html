@@ -20,15 +20,16 @@
 <header>
     <img src="assets/img/LOGO.png" class="logo" alt="Revo Coffee">
 
-    <!-- Кнопка бургер-меню -->
+    <!-- Бургер-кнопка (показывается только на телефонах) -->
     <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
+    <!-- Десктоп-меню -->
     <div class="header-center">
-        <nav class="header-nav" id="mainNav">
+        <nav class="header-nav">
             <ul>
                 <li><a href="#home">Главная</a></li>
                 <li><a href="#coffee">Кофе</a></li>
@@ -39,10 +40,22 @@
         </nav>
     </div>
 
+    <!-- Корзина -->
     <div class="header-cart">
         <img src="assets/icons/shopping-cart.png" alt="Корзина" class="cart-icon">
         <span class="cart-count">2</span>
     </div>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#coffee">Кофе</a></li>
+            <li><a href="#combo">Комбо-наборы</a></li>
+            <li><a href="#giftset">Подарочные наборы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
 </header>
 
     <main>

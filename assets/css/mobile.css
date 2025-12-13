@@ -1,17 +1,21 @@
 /* =========================================================
-    Мобильная адаптация и бургер-меню
+   Мобильная адаптация и бургер-меню
 ========================================================= */
-html, body {
-    overflow-x: hidden;
+.mobile-menu {
+    display: none;
 }
 
+/* ----- БУРГЕР КНОПКА ----- */
 .menu-toggle {
     display: none;
 }
 
-/* ------------- МЕДИА ДЛЯ ТЕЛЕФОНОВ < 768px ---------------- */
+/* =========================================================
+    МОБИЛЬНАЯ ВЕРСИЯ ДО 768px
+========================================================= */
 @media (max-width: 768px) {
 
+    /* ----- КНОПКА БУРГЕРА ----- */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -26,22 +30,19 @@ html, body {
         cursor: pointer;
 
         margin-left: auto;
-        margin-right: 15px;
-        z-index: 1500;
+        z-index: 2000;
     }
 
     .menu-toggle span {
         display: block;
         width: 100%;
         height: 3px;
-        border-radius: 3px;
-
         background-color: #415167;
-        transition: 0.3s ease;
+        border-radius: 3px;
+        transition: 0.3s;
     }
 
-
-    /* ----- АНИМАЦИЯ БУРГЕРА ----- */
+    /* Анимация крестика */
     .menu-toggle.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
@@ -52,44 +53,47 @@ html, body {
         transform: translateY(-9px) rotate(-45deg);
     }
 
-
-    /* ----- ОБЫЧНОЕ МЕНЮ СКРЫВАЕМ ----- */
     .header-center {
         display: none;
     }
 
-    /* ------ МОБИЛЬНОЕ МЕНЮ ------ */
-    .header-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;   /* скрыто за экраном */
-        width: 70%;
-        height: 100vh;
-
-        background-color: #ffffff;
-        padding-top: 100px;
-        padding-left: 30px;
-
+    /* =========================================================
+       МОБИЛЬНОЕ МЕНЮ
+    ========================================================== */
+    .mobile-menu {
         display: flex;
         flex-direction: column;
-        gap: 25px;
 
-        transition: 0.35s ease-in-out;
-        z-index: 1400;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+
+        background: #fff;
+        padding: 100px 30px 30px;
+
+        gap: 25px;
+        transition: 0.35s ease;
+        z-index: 1500;
+
+        box-shadow: -4px 0 12px rgba(0,0,0,0.1);
     }
 
-    .header-nav.active {
+    .mobile-menu.open {
         right: 0;
     }
 
-    .header-nav ul {
+    .mobile-menu ul {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 22px;
         padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
-    .header-nav a {
+    .mobile-menu a {
         font-size: 20px;
         font-weight: 700;
         color: #415167;
@@ -99,46 +103,20 @@ html, body {
         display: none;
     }
 
-    /* ----- HERO адаптация ----- */
     .hero {
         flex-direction: column;
-        padding: 30px 20px;
         text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
     }
 
     .hero-left h1 {
-        font-size: 38px;
+        font-size: 34px;
     }
 
     .hero-image {
         width: 100%;
+        max-width: 360px;
         height: auto;
-        margin-top: 20px;
-        border-radius: 10px;
-    }
-
-    /* ----- GRID на телефонах: 1 колонка ----- */
-    .base-features,
-    .product-grid,
-    .combo-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    /* ----- GIFTSET адаптация ----- */
-    .giftset-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .giftset-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .giftset-info .buttons {
-        justify-content: center;
     }
 }

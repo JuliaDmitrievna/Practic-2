@@ -303,3 +303,27 @@
         font-size: 14px;
     }
 }
+
+
+/* =========================================================
+   BURGER — показываем бургер и скрываем десктопное меню
+========================================================= */
+@media (max-width: 900px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .header-cart {
+        position: absolute;
+        right: 70px;
+        top: 22px;
+        transform: translateX(0);
+        margin-left: 0;
+        z-index: 1100;
+    }
+}

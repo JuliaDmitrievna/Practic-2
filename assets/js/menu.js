@@ -1,7 +1,14 @@
 const menuToggle = document.getElementById("menuToggle");
-const nav = document.getElementById("mainNav");
+const mobileMenu = document.getElementById("mobileMenu");
 
 menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
     menuToggle.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.classList.remove("active");
+    });
 });
