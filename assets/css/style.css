@@ -441,12 +441,34 @@ header {
     margin-bottom: 20px;
 }
 
-.combo-card .buttons button {
-    height: 55px;              
+.combo-card .buttons {
     display: flex;
-    align-items: center;        
-    justify-content: center;    
-    white-space: nowrap;        
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.combo-card button {
+    padding: 12px 26px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-main);
+
+    background-color: #fff;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.combo-card button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
 }
 
 /* =========================================================
