@@ -464,12 +464,14 @@ header {
 
     cursor: pointer;
     transition: 0.2s ease;
-    min-height: 60px;
 }
 
 .combo-card button:hover {
     background-color: var(--color-primary);
     color: #fff;
+}
+.combo-card .description {
+    min-height: 60px; /* фиксируем одинаковую высоту текстового блока */
 }
 
 /* =========================================================
