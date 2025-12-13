@@ -441,11 +441,13 @@ header {
     margin-bottom: 20px;
 }
 
-.combo-card .buttons {
+.combo-card .buttons button {
+    height: 55px;              
     display: flex;
-    gap: 10px;
+    align-items: center;        
+    justify-content: center;    
+    white-space: nowrap;        
 }
-
 
 /* =========================================================
    CONTACTS
