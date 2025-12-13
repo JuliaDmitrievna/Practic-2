@@ -1,0 +1,961 @@
+/* =========================================================
+   ГЛОБАЛЬНЫЕ ПАРАМЕТРЫ
+========================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Цвета */
+    --color-primary: #415167;
+    --color-accent: #C7A17A;
+    --color-dark: #151D28;
+    --color-light: #EDF0F5;
+    --color-cream: #F9F5E8;
+
+    /* Шрифты */
+    --font-display: "Montserrat", sans-serif;
+    --font-main: "Nunito", sans-serif;
+
+    /* Типографика */
+    --fs-display: 30px;
+    --fs-title: 24px;
+    --fs-subtitle: 20px;
+    --fs-body: 16px;
+    
+    /* Отступы */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    
+    /* Радиусы скругления */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    max-width: 1440px;  
+    margin: 0 auto;      
+    
+    /* Улучшения типографики */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   UNIVERSAL BUTTON STYLE
+========================================================= */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius-lg); /* Используем переменную */
+    border: 3px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    
+    /* Обязательные улучшения для доступности и touch-устройств */
+    min-height: 44px; /* Минимальная touch-зона (HIG/MD guidelines) */
+    touch-action: manipulation; /* Улучшает отзывчивость на touch-устройствах */
+    
+    /* Для центрирования текста при min-height */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn--accent {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn--accent:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.btn--filled {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn--filled:hover {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+
+/* =========================================================
+   ОБЩИЕ КОМПОНЕНТЫ (БЭМ-микс)
+========================================================= */
+/* Общий блок секции */
+.section {
+    padding: 80px 40px;
+}
+
+.section--white {
+    background-color: #fff;
+}
+
+.section--light {
+    background-color: var(--color-light);
+}
+
+/* Общий заголовок секции */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header__subtitle {
+    font-family: var(--font-main);
+    font-size: var(--fs-subtitle);
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 0 0 10px 0;
+}
+
+.section-header__title {
+    font-family: var(--font-display);
+    font-size: var(--fs-display);
+    font-weight: 900;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+/* Общая карточка */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   HEADER (БЭМ)
+========================================================= */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header__burger {
+    display: none; /* На десктопе скрыт */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.header__burger-line {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+/* Анимация крестика */
+.header__burger.active .header__burger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.header__burger.active .header__burger-line:nth-child(2) {
+    opacity: 0;
+}
+.header__burger.active .header__burger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.header__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* Навигация */
+.header-nav__list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav__link {
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 8px 4px; /* Увеличиваем touch-зону */
+}
+
+.header-nav__link:hover {
+    color: var(--color-accent);
+}
+
+/* Корзина */
+.header__cart {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    margin-left: 20px;
+    transform: translateX(-60px);
+}
+
+.header__cart-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.header__cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: var(--color-accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Мобильное меню (пока скрыто) */
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO (БЭМ)
+========================================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 0;
+    gap: 40px;
+    height: auto;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.hero__left {
+    /* Контейнер для текста */
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-size: 54px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.hero__title-highlight {
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 0 10px;
+}
+
+.hero__right {
+    /* Контейнер для изображения */
+}
+
+.hero__image {
+    height: 100%;
+    max-height: none;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 1100px) {
+    .hero {
+        padding-left: 20px;
+        gap: 20px;
+    }
+    
+    .hero__left {
+        flex: 1;
+    }
+    
+    .hero__right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .hero__image {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+    
+    .hero__title {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+    
+    .hero__right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero__image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    
+    .hero__title {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+    
+    .hero__image {
+        width: 100%;
+        height: auto;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   BASE SECTION (БЭМ)
+========================================================= */
+.base-section {
+    background-color: #fff;
+}
+
+/* Сетка особенностей */
+.base-section__features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feature-card {
+}
+
+.feature-card__icon {
+    width: 60px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.feature-card__title {
+    font-family: var(--font-main);
+    font-size: var(--fs-title);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 15px 0;
+}
+
+.feature-card__description {
+    font-size: var(--fs-body);
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .base-section__features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .base-section__features {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+/* =========================================================
+   FAVORITE SECTION (БЭМ)
+========================================================= */
+.favorite-section {
+}
+
+/* Сетка продуктов */
+.favorite-section__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.product-card__image {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.product-card__title {
+    font-family: var(--font-main);
+    font-size: var(--fs-title);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 10px 0;
+}
+
+.product-card__price {
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 15px 0;
+}
+
+.product-card__description {
+    font-size: var(--fs-body);
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* Чтобы кнопки всегда были внизу */
+}
+
+.product-card__buttons {
+    display: flex;
+    gap: 12px;
+}
+
+
+@media (max-width: 1200px) {
+    .favorite-section__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .favorite-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .favorite-section__grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-card__image {
+        width: 130px;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-card__image {
+        width: 115px;
+    }
+}
+
+
+/* =========================================================
+   GIFTSET SECTION (БЭМ)
+========================================================= */
+.giftset-section {
+    background-color: #fff;
+}
+
+/* Основной контент */
+.giftset-section__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.giftset-section__image {
+    /* Контейнер для изображения */
+}
+
+.giftset-section__img {
+    width: 450px;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Информационный блок */
+.giftset-section__info {
+    max-width: 450px;
+}
+
+.giftset-section__name {
+    font-family: var(--font-display);
+    font-size: var(--fs-title);
+    font-weight: 900;
+    color: var(--color-primary);
+    margin: 0 0 10px 0;
+}
+
+.giftset-section__price {
+    font-family: var(--font-main);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 20px 0;
+}
+
+.giftset-section__description {
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+}
+
+/* Список характеристик */
+.giftset-section__features {
+    margin: 0 0 30px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+}
+
+.giftset-section__feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.giftset-section__feature-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Кнопки */
+.giftset-section__buttons {
+    display: flex;
+    gap: 12px;
+}
+
+
+@media (max-width: 900px) {
+    .giftset-section__content {
+        gap: 40px;
+    }
+    
+    .giftset-section__img {
+        width: 360px;
+    }
+}
+
+@media (max-width: 600px) {
+    .giftset-section__content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .giftset-section__img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .giftset-section__info {
+        max-width: 100%;
+    }
+    
+    .giftset-section__buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .giftset-section__buttons .btn {
+        width: 80%;
+        max-width: 260px;
+    }
+}
+
+
+/* =========================================================
+   COMBO SECTION (БЭМ)
+========================================================= */
+.combo-section {
+    background-color: var(--color-light);
+}
+
+/* Сетка комбо-наборов */
+.combo-section__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.combo-card__image {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.combo-card__title {
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 10px 0;
+}
+
+.combo-card__price {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.combo-card__new-price {
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.combo-card__old-price {
+    color: #999;
+    font-size: 16px;
+    text-decoration: line-through;
+}
+
+.combo-card__description {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-dark);
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+    min-height: 60px; /* фиксируем одинаковую высоту текстового блока */
+}
+
+.combo-card__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+@media (max-width: 900px) {
+    .combo-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .combo-section__grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .combo-card {
+        padding: 15px;
+    }
+    
+    .combo-card__image {
+        width: 150px;
+    }
+    
+    .combo-card__title {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   CONTACTS (БЭМ)
+========================================================= */
+.contacts-section {
+    background-color: #fff;
+}
+
+.contacts-section__info {
+    text-align: center;
+    margin-top: 15px;
+    font-style: normal;
+}
+
+.contacts-section__item {
+    margin: 12px 0;
+    font-size: var(--fs-body);
+}
+
+.contacts-section__link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.contacts-section__link:hover {
+    color: var(--color-accent);
+}
+
+
+/* =========================================================
+   FOOTER (БЭМ)
+========================================================= */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    font-family: var(--font-main);
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.footer__copyright {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   OVERLAY FOR MOBILE MENU
+========================================================= */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1400; /* Меньше чем у меню (1500) */
+}
+
+.nav-overlay.active {
+    display: block;
+}
+
+
+/* =========================================================
+   MOBILE MENU (БЭМ)
+========================================================= */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.15);
+    padding: 100px 30px;
+    transition: 0.4s ease;
+    z-index: 1500;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu__link {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    transition: color 0.2s ease;
+}
+
+.mobile-menu__link:hover {
+    color: var(--color-accent);
+}
+
+
+/* =========================================================
+   SCROLL TO TOP BUTTON (Кнопка "Наверх")
+========================================================= */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-height: 50px;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.scroll-top:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .contacts-section {
+    }
+    
+    .contacts-section__item {
+        font-size: 16px;
+    }
+    
+    /* Кнопка "Наверх" для мобильных */
+    .scroll-top {
+        width: 44px;
+        height: 44px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
+}
+
+    /* Touch-зоны для мобильных */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px; /* Минимальная высота для touch */
+        padding: 12px 20px;
+    }
+    
+    /* Увеличиваем бургер до touch-размеров */
+    .header__burger {
+        width: 44px;
+        height: 44px;
+        padding: 10px; /* Важно: внутренний отступ увеличивает зону касания */
+    }
+}

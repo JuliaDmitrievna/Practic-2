@@ -4,56 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revo Coffee</title>
+
     <!-- Подключение шрифтов -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Подключение css-->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/menu.js"></script>
+
 
 </head>
 <body>
 
     <!-- ШАПКА САЙТА -->
-<header>
-    <img src="assets/img/LOGO.png" class="logo" alt="Revo Coffee">
-
-    <!-- Бургер-кнопка (показывается только на телефонах) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
-        <span></span>
-        <span></span>
-        <span></span>
+<header class="header">
+    <img src="assets/img/LOGO.png" class="header__logo" alt="Revo Coffee">
+    
+    <button class="header__burger" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
     </button>
-
-    <!-- Десктоп-меню -->
-    <div class="header-center">
+    
+    <div class="header__center">
         <nav class="header-nav">
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#coffee">Кофе</a></li>
-                <li><a href="#combo">Комбо-наборы</a></li>
-                <li><a href="#giftset">Подарочные наборы</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+            <ul class="header-nav__list">
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="#home">Главная</a>
+                </li>
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="#coffee">Кофе</a>
+                </li>
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="#combo">Комбо-наборы</a>
+                </li>
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="#giftset">Подарочные наборы</a>
+                </li>
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="#contacts">Контакты</a>
+                </li>
             </ul>
         </nav>
     </div>
-
-    <!-- Корзина -->
-    <div class="header-cart">
-        <img src="assets/icons/shopping-cart.png" alt="Корзина" class="cart-icon">
-        <span class="cart-count">2</span>
-    </div>
-
-    <!-- МОБИЛЬНОЕ МЕНЮ -->
+    
+    <button class="header__cart" aria-label="Корзина, 2 товара">
+        <img src="assets/icons/shopping-cart.png" alt="" class="header__cart-icon">
+        <span class="header__cart-count">2</span>
+    </button>
+    
     <nav class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#coffee">Кофе</a></li>
-            <li><a href="#combo">Комбо-наборы</a></li>
-            <li><a href="#giftset">Подарочные наборы</a></li>
-            <li><a href="#contacts">Контакты</a></li>
+        <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="#home">Главная</a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="#coffee">Кофе</a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="#combo">Комбо-наборы</a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="#giftset">Подарочные наборы</a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="#contacts">Контакты</a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -62,257 +79,246 @@
 
         <!-- ГЛАВНЫЙ ЭКРАН -->
 <section id="home" class="hero">
-
-    <div class="hero-left">
-        <h1>
+    <div class="hero__left">
+        <h1 class="hero__title">
             ВАШ<br>
-            <span class="highlight">УНИКАЛЬНЫЙ</span><br>
+            <span class="hero__title-highlight">УНИКАЛЬНЫЙ</span><br>
             КОФЕ
         </h1>
     </div>
-
-    <div class="hero-right">
-        <img src="assets/img/banner.png" alt="Кофейная композиция" class="hero-image">
+    <div class="hero__right">
+        <img src="assets/img/banner.png" alt="Кофейная композиция" class="hero__image">
     </div>
-
 </section>
 
         <!-- ОСНОВЫ ВАШЕГО КОФЕ -->
-<section id="base" class="base-section">
-
+<section id="base" class="base-section section section--white">
     <div class="section-header">
-        <h2 class="section-title">ПОСТРОЙТЕ СВОЮ КОФЕЙНУЮ ОСНОВУ</h2>
+        <h2 class="section-header__title">ПОСТРОЙТЕ СВОЮ КОФЕЙНУЮ ОСНОВУ</h2>
     </div>
 
-    <div class="base-features">
-
-        <article class="feature-item">
-            <img src="assets/icons/IC-4.png" alt="Источник кофе">
-            <h3>Источник</h3>
-            <p>Зерна Арабики и&nbsp;Робусты высокого качества, соответствующие международным стандартам.</p>
+    <div class="base-section__features">
+        <article class="feature-card">
+            <img class="feature-card__icon" src="assets/icons/IC-4.png" alt="Источник кофе">
+            <h3 class="feature-card__title">Источник</h3>
+            <p class="feature-card__description">Зерна Арабики и&nbsp;Робусты высокого качества, соответствующие международным стандартам.</p>
         </article>
 
-        <article class="feature-item">
-            <img src="assets/icons/IC-1.png" alt="Качество">
-            <h3>Качество</h3>
-            <p>Каждое зерно&nbsp;&mdash; результат мастерства и&nbsp;высокой концентрации внимания кофейных специалистов.</p>
+        <article class="feature-card">
+            <img class="feature-card__icon" src="assets/icons/IC-1.png" alt="Качество">
+            <h3 class="feature-card__title">Качество</h3>
+            <p class="feature-card__description">Каждое зерно&nbsp;&mdash; результат мастерства и&nbsp;высокой концентрации внимания кофейных специалистов.</p>
         </article>
 
-        <article class="feature-item">
-            <img src="assets/icons/IC-2.png" alt="Виды зерна">
-            <h3>Виды зерна</h3>
-            <p>До&nbsp;70% вкуса кофе определяется происхождением и&nbsp;качеством зелёного зерна.</p>
+        <article class="feature-card">
+            <img class="feature-card__icon" src="assets/icons/IC-2.png" alt="Виды зерна">
+            <h3 class="feature-card__title">Виды зерна</h3>
+            <p class="feature-card__description">До&nbsp;70% вкуса кофе определяется происхождением и&nbsp;качеством зелёного зерна.</p>
         </article>
 
-        <article class="feature-item">
-            <img src="assets/icons/IC-3.png" alt="Обжарка">
-            <h3>Обжарка</h3>
-            <p>Зёрна проходят тщательную обжарку и&nbsp;помол, чтобы получить насыщенный и&nbsp;чистый вкус.</p>
+        <article class="feature-card">
+            <img class="feature-card__icon" src="assets/icons/IC-3.png" alt="Обжарка">
+            <h3 class="feature-card__title">Обжарка</h3>
+            <p class="feature-card__description">Зёрна проходят тщательную обжарку и&nbsp;помол, чтобы получить насыщенный и&nbsp;чистый вкус.</p>
         </article>
-
     </div>
-
 </section>
 
         <!-- ВЫБЕРИТЕ СВОЙ ВКУС -->
-<section id="coffee" class="favorite-section">
-
+<section id="coffee" class="favorite-section section">
     <div class="section-header">
-        <p class="section-subtitle">Выберите свой любимый кофе</p>
-        <h2 class="section-title">ТОЧНО ВАШ ВКУС</h2>
+        <p class="section-header__subtitle">Выберите свой любимый кофе</p>
+        <h2 class="section-header__title">ТОЧНО ВАШ ВКУС</h2>
     </div>
 
-    <div class="product-grid">
-
+    <div class="favorite-section__grid">
+        
         <!-- REVO Morning -->
-        <article class="product-card">
-            <img src="assets/img/morning.png" alt="REVO Morning">
-            <h3>REVO Morning</h3>
-            <p class="price">99.000</p>
-            <p class="description">Горчинка, сладкое послевкусие, цветочные ноты.</p>
-            <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+        <article class="product-card card">
+            <img class="product-card__image" src="assets/img/morning.png" alt="REVO Morning">
+            <h3 class="product-card__title">REVO Morning</h3>
+            <p class="product-card__price">99.000</p>
+            <p class="product-card__description">Горчинка, сладкое послевкусие, цветочные ноты.</p>
+            <div class="product-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
 
         <!-- REVO Everyday -->
-        <article class="product-card">
-            <img src="assets/img/everyday.png" alt="REVO Everyday">
-            <h3>REVO Everyday</h3>
-            <p class="price">85.000</p>
-            <p class="description">Сбалансированный вкус, лёгкая горчинка, нотки шоколада.</p>
-            <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+        <article class="product-card card">
+            <img class="product-card__image" src="assets/img/everyday.png" alt="REVO Everyday">
+            <h3 class="product-card__title">REVO Everyday</h3>
+            <p class="product-card__price">85.000</p>
+            <p class="product-card__description">Сбалансированный вкус, лёгкая горчинка, нотки шоколада.</p>
+            <div class="product-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
 
         <!-- REVO Origin -->
-        <article class="product-card">
-            <img src="assets/img/origin.png" alt="REVO Origin">
-            <h3>REVO Origin</h3>
-            <p class="price">139.000</p>
-            <p class="description">Сладкое послевкусие, лёгкая горчинка, ягодная кислинка.</p>
-            <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+        <article class="product-card card">
+            <img class="product-card__image" src="assets/img/origin.png" alt="REVO Origin">
+            <h3 class="product-card__title">REVO Origin</h3>
+            <p class="product-card__price">139.000</p>
+            <p class="product-card__description">Сладкое послевкусие, лёгкая горчинка, ягодная кислинка.</p>
+            <div class="product-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
 
         <!-- REVO Dam Da -->
-        <article class="product-card">
-            <img src="assets/img/damda.png" alt="REVO Dam Da">
-            <h3>REVO Dam Da</h3>
-            <p class="price">75.000</p>
-            <p class="description">Крепкий традиционный вкус, приятная горчинка.</p>
-             <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+        <article class="product-card card">
+            <img class="product-card__image" src="assets/img/damda.png" alt="REVO Dam Da">
+            <h3 class="product-card__title">REVO Dam Da</h3>
+            <p class="product-card__price">75.000</p>
+            <p class="product-card__description">Крепкий традиционный вкус, приятная горчинка.</p>
+            <div class="product-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
-
     </div>
-
 </section>
 
         <!-- ПОДАРОЧНЫЙ НАБОР -->
-<section id="giftset" class="giftset-section">
-
+<section id="giftset" class="giftset-section section section--white">
     <div class="section-header">
-        <p class="section-subtitle">Лучший подарок для близких</p>
-        <h2 class="section-title">ПОДАРОЧНЫЙ НАБОР</h2>
+        <p class="section-header__subtitle">Лучший подарок для близких</p>
+        <h2 class="section-header__title">ПОДАРОЧНЫЙ НАБОР</h2>
     </div>
 
-    <div class="giftset-content">
+    <div class="giftset-section__content">
 
         <!-- Картинка подарочного набора -->
-        <div class="giftset-image">
-            <img src="assets/img/giftset.png" alt="Подарочный набор REVO">
+        <div class="giftset-section__image">
+            <img class="giftset-section__img" src="assets/img/giftset.png" alt="Подарочный набор REVO">
         </div>
 
         <!-- Текстовая информация -->
-        <div class="giftset-info">
-
-            <h3 class="giftset-name">Giftset "Ca phe phin Viet Nam"</h3>
-            <p class="giftset-price">285.000</p>
-
-            <p class="giftset-description">
+        <div class="giftset-section__info">
+            <h3 class="giftset-section__name">Giftset "Ca phe phin Viet Nam"</h3>
+            <p class="giftset-section__price">285.000</p>
+            <p class="giftset-section__description">
                 Подарок для настоящего ценителя кофе. Зёрна Revo тщательно отбираются,
                 обжариваются по&nbsp;технологии мастеров, создавая чистый и&nbsp;насыщенный вкус,
                 который подчеркнёт индивидуальность каждого напитка.
             </p>
 
             <!-- Характеристики -->
-            <ul class="giftset-features">
-                <li>
-                    <img src="assets/icons/IC-coffee.png" alt="Вид зерна">
+            <ul class="giftset-section__features">
+                <li class="giftset-section__feature">
+                    <img class="giftset-section__feature-icon" src="assets/icons/IC-coffee.png" alt="Вид зерна">
                     Высококачественная смесь
                 </li>
-                <li>
-                    <img src="assets/icons/IC-Mountain.png" alt="Высота произрастания">
+                <li class="giftset-section__feature">
+                    <img class="giftset-section__feature-icon" src="assets/icons/IC-Mountain.png" alt="Высота произрастания">
                     700&ndash;800&nbsp;м
-
                 </li>
             </ul>
 
             <!-- Кнопки -->
-            <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+            <div class="giftset-section__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
         <!-- КОМБО-НАБОРЫ -->
-<section id="combo" class="combo-section">
+<section id="combo" class="combo-section section section--light">
+   <div class="section-header">
+        <p class="section-header__subtitle">Ваш персонализированный кофе</p>
+        <h2 class="section-header__title">КОМБО-НАБОРЫ</h2>
+   </div>
 
-    <div class="section-header">
-        <p class="section-subtitle">Ваш персонализированный кофе</p>
-        <h2 class="section-title">КОМБО-НАБОРЫ</h2>
-    </div>
-
-    <div class="combo-grid">
-
+    <div class="combo-section__grid">
+        
         <!-- Combo Revo Dam Da -->
-        <article class="combo-card">
-            <img src="assets/img/combodamda.png" alt="Combo Revo Dam Da">
-            <h3>Combo Revo Dam Da</h3>
-            <p class="price">
-                <span class="new-price">147.000</span>
-                <span class="old-price">155.000</span>
+        <article class="combo-card card">
+            <img class="combo-card__image" src="assets/img/combodamda.png" alt="Combo Revo Dam Da">
+            <h3 class="combo-card__title">Combo Revo Dam Da</h3>
+            <p class="combo-card__price">
+                <span class="combo-card__new-price">147.000</span>
+                <span class="combo-card__old-price">155.000</span>
             </p>
-            <p class="description">
+            <p class="combo-card__description">
                 Крепкий вкус, высокая концентрация кофеина.
             </p>
-            <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+            <div class="combo-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
 
         <!-- Combo Revo Everyday -->
-        <article class="combo-card">
-            <img src="assets/img/comboeveryday.png" alt="Combo Revo Everyday">
-            <h3>Combo Revo Everyday</h3>
-            <p class="price">
-                <span class="new-price">156.000</span>
-                <span class="old-price">165.000</span>
+        <article class="combo-card card">
+            <img class="combo-card__image" src="assets/img/comboeveryday.png" alt="Combo Revo Everyday">
+            <h3 class="combo-card__title">Combo Revo Everyday</h3>
+            <p class="combo-card__price">
+                <span class="combo-card__new-price">156.000</span>
+                <span class="combo-card__old-price">165.000</span>
             </p>
-            <p class="description">
+            <p class="combo-card__description">
                 Сочетание мягкой горчинки и&nbsp;ароматных оттенков.
             </p>
-            <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+            <div class="combo-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
 
         <!-- Combo Revo Honey -->
-        <article class="combo-card">
-            <img src="assets/img/combohoney.png" alt="Combo Revo Honey">
-            <h3>Combo Revo Honey</h3>
-            <p class="price">
-                <span class="new-price">275.000</span>
-                <span class="old-price">260.000</span>
+        <article class="combo-card card">
+            <img class="combo-card__image" src="assets/img/combohoney.png" alt="Combo Revo Honey">
+            <h3 class="combo-card__title">Combo Revo Honey</h3>
+            <p class="combo-card__price">
+                <span class="combo-card__new-price">260.000</span>
+                <span class="combo-card__old-price">275.000</span>
             </p>
-            <p class="description">
+            <p class="combo-card__description">
                 Обработано по&nbsp;технологии Arabica Honey.
             </p>
-           <div class="buttons">
-                <button class="btn">Купить сейчас</button>
-                <button class="btn">Подробнее</button>
+            <div class="combo-card__buttons">
+                <button class="btn" type="button">Купить сейчас</button>
+                <button class="btn" type="button">Подробнее</button>
             </div>
         </article>
-
     </div>
-
 </section>
 
 </main>
 
         <!-- КОНТАКТЫ -->
-<section id="contacts" class="contacts-section">
+<section id="contacts" class="contacts-section section section--white">
     <div class="section-header">
-        <p class="section-subtitle">Свяжитесь с нами</p>
-        <h2 class="section-title">КОНТАКТЫ</h2>
+        <p class="section-header__subtitle">Свяжитесь с нами</p>
+        <h2 class="section-header__title">КОНТАКТЫ</h2>
     </div>
 
-    <div class="contacts-info">
-        <p>Email: <a href="mailto:info@revo-coffee.com">info@revo-coffee.com</a></p>
-        <p>Телефон: <a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
-        <p>Адрес: г. Москва, ул. Примерная, д. 10</p>
-    </div>
+    <address class="contacts-section__info">
+        <p class="contacts-section__item">
+            Email: <a class="contacts-section__link" href="mailto:info@revo-coffee.com">info@revo-coffee.com</a>
+        </p>
+        <p class="contacts-section__item">
+            Телефон: <a class="contacts-section__link" href="tel:+79999999999">+7 (999) 999-99-99</a>
+        </p>
+        <p class="contacts-section__item">
+            Адрес: г. Москва, ул. Примерная, д. 10
+        </p>
+    </address>
 </section>
 
 <footer class="footer">
-    © Revo Coffee Vietnam — 2018
+    <p class="footer__copyright">© Revo Coffee Vietnam — 2018</p>
 </footer>
 
-<script src="assets/js/menu.js"></script>
+<!-- Кнопка "Наверх" -->
+<button class="scroll-top" id="scrollTop" aria-label="Наверх">
+    ↑
+</button>
 </body>
 </html>
