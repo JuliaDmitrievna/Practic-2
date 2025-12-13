@@ -321,10 +321,6 @@ section {
     margin: 0 auto;
 }
 
-.hero__left {
-    /* Контейнер для текста */
-}
-
 .hero__title {
     font-family: var(--font-display);
     font-size: 54px;
@@ -339,10 +335,6 @@ section {
     background-color: var(--color-accent);
     color: #fff;
     padding: 0 10px;
-}
-
-.hero__right {
-    /* Контейнер для изображения */
 }
 
 .hero__image {
@@ -442,9 +434,6 @@ section {
     text-align: center;
 }
 
-.feature-card {
-}
-
 .feature-card__icon {
     width: 60px;
     margin: 0 auto 20px;
@@ -483,9 +472,6 @@ section {
 /* =========================================================
    FAVORITE SECTION (БЭМ)
 ========================================================= */
-.favorite-section {
-}
-
 /* Сетка продуктов */
 .favorite-section__grid {
     display: grid;
@@ -578,9 +564,6 @@ section {
     margin-top: 60px;
 }
 
-.giftset-section__image {
-    /* Контейнер для изображения */
-}
 
 .giftset-section__img {
     width: 450px;
@@ -928,8 +911,6 @@ section {
 }
 
 @media (max-width: 600px) {
-    .contacts-section {
-    }
     
     .contacts-section__item {
         font-size: 16px;
