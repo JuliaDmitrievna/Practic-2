@@ -79,6 +79,10 @@ header {
     z-index: 3000;
 
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    
+
     background-color: #fff; /* обязательно */
     width: 100%;     
     background-color: #fff;
