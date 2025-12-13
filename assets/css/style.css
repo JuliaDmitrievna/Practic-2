@@ -382,9 +382,9 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    align-items: stretch;
 }
 
-/* Карточки */
 .combo-card {
     background-color: #fff;
     padding: 20px;
@@ -395,8 +395,10 @@ header {
     align-items: center;
     text-align: center;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
+
+    height: 100%;
 }
 
 .combo-card:hover {
@@ -404,18 +406,19 @@ header {
 }
 
 .combo-card img {
-    width: 200px;
+    width: 160px;
     margin-bottom: 20px;
 }
 
 .combo-card h3 {
     font-family: var(--font-main);
-    font-size: 20px;
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 10px;
 }
 
+/* Цена */
 .combo-card .price {
     font-size: 20px;
     font-weight: 700;
@@ -435,43 +438,41 @@ header {
 }
 
 .combo-card .description {
-    font-size: 16px;
+    font-size: var(--fs-body);
     line-height: 1.4;
-    color: var(--color-dark);
     margin-bottom: 20px;
+    min-height: 60px;
 }
 
 .combo-card .buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.combo-card .buttons button {
+    @apply .btn;
 }
 
 .combo-card button {
-    padding: 12px 26px;
+    padding: 10px 20px;
+    font-family: var(--font-main);
     font-size: 16px;
     font-weight: 700;
-    font-family: var(--font-main);
 
-    background-color: #fff;
-    border: 2px solid var(--color-primary);
+    background-color: var(--color-cream);
+    border: 2px solid var(--color-accent);
+
     color: var(--color-primary);
-
-    border-radius: 12px;
+    border-radius: 8px;
 
     cursor: pointer;
     transition: 0.2s ease;
 }
 
 .combo-card button:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: #fff;
-}
-.combo-card .description {
-    min-height: 60px; /* фиксируем одинаковую высоту текстового блока */
 }
 
 /* =========================================================
