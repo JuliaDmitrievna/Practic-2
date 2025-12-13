@@ -182,7 +182,6 @@
 /* =========================================================
    FAVORITE SECTION 
 ========================================================= */
-
 @media (max-width: 1200px) {
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -248,6 +247,21 @@
     }
 }
 
+@media (max-width: 600px) {
+    .giftset-info .buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; /* расстояние между кнопками */
+    }
+
+    .giftset-info .buttons button {
+        width: 80%; /* красиво смотрится на телефонах */
+        max-width: 260px;
+    }
+}
 
 /* =========================================================
    COMBO SECTION 
