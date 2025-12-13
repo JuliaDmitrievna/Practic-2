@@ -73,8 +73,7 @@ section {
    HEADER — фиксированная ширина + правильное выравнивание
 ========================================================= */
 header {
-    width: 100%;
-    max-width: 1440px;      
+    width: 100%;     
     margin: 0 auto;
 
     background-color: #fff;
