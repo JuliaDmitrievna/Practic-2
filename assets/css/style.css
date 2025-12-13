@@ -72,26 +72,27 @@ section {
 /* =========================================================
    HEADER — фиксированная ширина + правильное выравнивание
 ========================================================= */
-.site-header {
+header {
     position: sticky;
     top: 0;
     left: 0;
     z-index: 3000;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
 
-.header-inner {
+    width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+    
 
+    background-color: #fff; /* обязательно */
+    width: 100%;     
+    background-color: #fff;
     padding: 20px 40px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: space-between; 
+
+    gap: 40px;              
 }
 
 .header-center {
