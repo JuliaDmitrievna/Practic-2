@@ -11,22 +11,29 @@
     <!-- Подключение css-->
     <link rel="stylesheet" href="assets/styles/reset.css">
     <link rel="stylesheet" href="assets/styles/style.css">
-    <script src="assets/scripts/menu.js"></script>
-
 
 </head>
 <body>
 
     <!-- ШАПКА САЙТА -->
 <header class="header">
-    <img src="assets/img/LOGO.png" class="header__logo" alt="Revo Coffee">
-    
+    <!-- 1. Бургер меню -->
     <button class="header__burger" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
     </button>
     
+    <!-- 2. Логотип по центру -->
+    <img src="assets/img/LOGO.png" class="header__logo" alt="Revo Coffee">
+    
+    <!-- 3. Корзина справа -->
+    <button class="header__cart" aria-label="Корзина, 2 товара">
+        <img src="assets/icons/shopping-cart.png" alt="" class="header__cart-icon">
+        <span class="header__cart-count">2</span>
+    </button>
+    
+    <!-- 4. Обычное меню (скрывается на мобильных) -->
     <div class="header__center">
         <nav class="header-nav">
             <ul class="header-nav__list">
@@ -49,11 +56,7 @@
         </nav>
     </div>
     
-    <button class="header__cart" aria-label="Корзина, 2 товара">
-        <img src="assets/icons/shopping-cart.png" alt="" class="header__cart-icon">
-        <span class="header__cart-count">2</span>
-    </button>
-    
+    <!-- 5. Мобильное меню (скрыто справа) -->
     <nav class="mobile-menu" id="mobileMenu">
         <ul class="mobile-menu__list">
             <li class="mobile-menu__item">
@@ -320,5 +323,7 @@
 <button class="scroll-top" id="scrollTop" aria-label="Наверх">
     ↑
 </button>
+
+<script src="assets/scripts/menu.js"></script>
 </body>
 </html>

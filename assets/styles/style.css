@@ -926,7 +926,7 @@ section {
     }
 }
 
-    /* Touch-зоны для мобильных */
+/* Touch-зоны для мобильных */
 @media (max-width: 768px) {
     .btn {
         min-height: 44px; /* Минимальная высота для touch */
@@ -938,5 +938,108 @@ section {
         width: 44px;
         height: 44px;
         padding: 10px; /* Важно: внутренний отступ увеличивает зону касания */
+    }
+}
+
+/* =========================================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (768px и меньше)
+========================================================= */
+@media (max-width: 768px) {
+    /* 1. Показываем бургер-кнопку */
+    .header__burger {
+        display: flex !important;
+        position: relative;
+        z-index: 2000;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+    }
+    
+    /* 2. Скрываем обычное меню */
+    .header__center {
+        display: none !important;
+    }
+    
+    /* 3. Скрываем корзину в хедере */
+    .header__cart {
+        display: none !important;
+    }
+    
+    /* 4. Показываем мобильное меню (в скрытом состоянии) */
+    .mobile-menu {
+        display: block;
+    }
+    
+    /* 5. Логотип по центру */
+    .header__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        max-height: 40px;
+        width: auto;
+    }
+    
+    /* 6. Фиксируем header */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        height: 70px;
+    }
+    
+    /* 7. Добавляем отступ для контента под фиксированным header */
+    main {
+        margin-top: 70px;
+    }
+    
+    /* 8. Корректируем hero для мобильных */
+    .hero {
+        padding: 20px;
+        margin-top: 0;
+    }
+    
+    .hero__title {
+        font-size: 32px;
+    }
+    
+    /* 9. Уменьшаем отступы секций для мобильных */
+    .section {
+        padding: 40px 20px;
+    }
+    
+    .section-header__title {
+        font-size: 24px;
+    }
+    
+    /* 10. Настройки сеток для мобильных */
+    .base-section__features,
+    .favorite-section__grid,
+    .combo-section__grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    /* 11. Touch-зоны для мобильных */
+    .btn {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+    
+    /* 12. Исправляем z-index для корректного отображения */
+    .header__burger {
+        z-index: 2000;
+    }
+    
+    .mobile-menu {
+        z-index: 1900;
+    }
+    
+    .nav-overlay {
+        z-index: 1800;
     }
 }
