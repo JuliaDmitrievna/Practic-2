@@ -519,6 +519,13 @@ section {
 }
 
 
+@media (max-width: 1366px) {
+    .favorite-section__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+}
+
 @media (max-width: 1200px) {
     .favorite-section__grid {
         grid-template-columns: repeat(3, 1fr);
