@@ -3,6 +3,7 @@
 ========================================================= */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 :root {
@@ -43,16 +44,12 @@ body {
     background-color: var(--color-light);
     color: var(--color-dark);
     max-width: 1440px;  
-    margin: 0 auto;      
+    margin: 0;     
     
     /* Улучшения типографики */
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-html, body {
-    overflow-x: hidden;
 }
 
 section {
@@ -194,17 +191,37 @@ section {
 .header {
     position: sticky;
     top: 0;
-    left: 0;
     z-index: 3000;
+
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    background-color: #fff;
     padding: 20px 40px;
+
+    background-color: #fff;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.header__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .header__burger {
@@ -240,20 +257,10 @@ section {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-.header__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-}
-
 /* Навигация */
 .header-nav__list {
     display: flex;
     gap: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .header-nav__link {
@@ -274,13 +281,12 @@ section {
 .header__cart {
     display: flex;
     align-items: center;
+    position: relative;
+
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
-    position: relative;
-    margin-left: 20px;
-    transform: translateX(-60px);
 }
 
 .header__cart-icon {
@@ -942,104 +948,55 @@ section {
 }
 
 /* =========================================================
-   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (768px и меньше)
+   АДАПТИВ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ (768px и меньше)
 ========================================================= */
 @media (max-width: 768px) {
-    /* 1. Показываем бургер-кнопку */
+
+    /* 1. Показываем бургер */
     .header__burger {
-        display: flex !important;
-        position: relative;
-        z-index: 2000;
+        display: flex;
         width: 44px;
         height: 44px;
         padding: 10px;
+        z-index: 2000;
     }
-    
-    /* 2. Скрываем обычное меню */
+
+    /* 2. Скрываем десктопное меню */
     .header__center {
-        display: none !important;
+        display: none;
     }
-    
-    /* 3. Скрываем корзину в хедере */
-    .header__cart {
-        display: none !important;
-    }
-    
-    /* 4. Показываем мобильное меню (в скрытом состоянии) */
+
+    /* 3. Корзину НЕ скрываем здесь */
+
+    /* 4. Показываем мобильное меню (пока закрыто) */
     .mobile-menu {
         display: block;
+        z-index: 1900;
     }
-    
-    /* 5. Логотип по центру */
+
+    /* 5. Центрируем логотип */
     .header__logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         max-height: 40px;
-        width: auto;
     }
-    
+
     /* 6. Фиксируем header */
     .header {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        width: 100%;
         max-width: 100%;
         padding: 15px 20px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         height: 70px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    
-    /* 7. Добавляем отступ для контента под фиксированным header */
+
+    /* 7. Отступ под header */
     main {
         margin-top: 70px;
     }
-    
-    /* 8. Корректируем hero для мобильных */
-    .hero {
-        padding: 20px;
-        margin-top: 0;
-    }
-    
-    .hero__title {
-        font-size: 32px;
-    }
-    
-    /* 9. Уменьшаем отступы секций для мобильных */
-    .section {
-        padding: 40px 20px;
-    }
-    
-    .section-header__title {
-        font-size: 24px;
-    }
-    
-    /* 10. Настройки сеток для мобильных */
-    .base-section__features,
-    .favorite-section__grid,
-    .combo-section__grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    /* 11. Touch-зоны для мобильных */
-    .btn {
-        min-height: 44px;
-        padding: 12px 20px;
-    }
-    
-    /* 12. Исправляем z-index для корректного отображения */
-    .header__burger {
-        z-index: 2000;
-    }
-    
-    .mobile-menu {
-        z-index: 1900;
-    }
-    
-    .nav-overlay {
-        z-index: 1800;
-    }
 }
+

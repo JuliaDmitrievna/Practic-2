@@ -17,23 +17,29 @@
 
     <!-- ШАПКА САЙТА -->
 <header class="header">
-    <!-- 1. Бургер меню -->
-    <button class="header__burger" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-    </button>
-    
-    <!-- 2. Логотип по центру -->
-    <img src="assets/img/LOGO.png" class="header__logo" alt="Revo Coffee">
-    
-    <!-- 3. Корзина справа -->
-    <button class="header__cart" aria-label="Корзина, 2 товара">
-        <img src="assets/icons/shopping-cart.png" alt="" class="header__cart-icon">
-        <span class="header__cart-count">2</span>
-    </button>
-    
-    <!-- 4. Обычное меню (скрывается на мобильных) -->
+
+    <!-- ЛЕВАЯ ЗОНА: бургер (только мобилка) + логотип -->
+    <div class="header__left">
+        <button
+            class="header__burger"
+            id="menuToggle"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+        >
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+
+        <img
+            src="assets/img/LOGO.png"
+            class="header__logo"
+            alt="Revo Coffee"
+        >
+    </div>
+
+    <!-- ЦЕНТР: навигация -->
     <div class="header__center">
         <nav class="header-nav">
             <ul class="header-nav__list">
@@ -55,8 +61,20 @@
             </ul>
         </nav>
     </div>
-    
-    <!-- 5. Мобильное меню (скрыто справа) -->
+
+    <!-- ПРАВАЯ ЗОНА: корзина -->
+    <div class="header__right">
+        <button class="header__cart" aria-label="Корзина, 2 товара">
+            <img
+                src="assets/icons/shopping-cart.png"
+                alt=""
+                class="header__cart-icon"
+            >
+            <span class="header__cart-count">2</span>
+        </button>
+    </div>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ -->
     <nav class="mobile-menu" id="mobileMenu">
         <ul class="mobile-menu__list">
             <li class="mobile-menu__item">
@@ -76,6 +94,7 @@
             </li>
         </ul>
     </nav>
+
 </header>
 
     <main>
